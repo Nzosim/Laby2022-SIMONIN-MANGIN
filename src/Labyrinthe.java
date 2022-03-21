@@ -3,8 +3,8 @@
  */
 class Labyrinthe{
     private boolean[][] tableau;
-    private Coordonnee personnage;
-    private Coordonnee sortie;
+    private Position personnage;
+    private Position sortie;
 
     public final static char MUR = 'X';
     public final static char PJ = 'P';
