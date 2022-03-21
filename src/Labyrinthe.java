@@ -2,9 +2,9 @@
  * Squelette de classe labyrinthe
  */
 class Labyrinthe{
-    private boolean[][] tableau;
-    private Coordonnee personnage;
-    private Coordonnee sortie;
+    private boolean[][] murs;
+    private Personnage personnage;
+    private Sortie sortie;
 
     public final static char MUR = 'X';
     public final static char PJ = 'P';
