@@ -76,10 +76,24 @@ public class Labyrinthe{
         String info = "";
         for (int i = 0; i<murs.length; i++){
             for (int j = 0; j < murs[i].length; j++){
-
+                if (murs[j][i]){
+                    info+=MUR;
+                }else{
+                    char temp = getChar(j,i);
+                    switch (temp){
+                        case PJ :
+                            info+= PJ;
+                            break;
+                        case SORTIE:
+                            info+= SORTIE;
+                        case VIDE:
+                            info += VIDE;
+                    }
+                }
             }
-
+            info+="\n";
         }
+        return info;
     }
 
 
