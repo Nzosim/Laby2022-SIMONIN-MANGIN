@@ -32,7 +32,22 @@ class Labyrinthe{
 
 
     static int[] getSuivant(int x, int y, String action) {
-        throw new Error("TODO");
+        switch (action){
+            case HAUT :
+                x--;
+                break;
+            case BAS:
+                x++;
+                break;
+            case GAUCHE:
+                y--;
+                break;
+            case DROITE:
+                y++;
+                break;
+        }
+        int [] position = {x,y};
+        return position;
     }
 
 
