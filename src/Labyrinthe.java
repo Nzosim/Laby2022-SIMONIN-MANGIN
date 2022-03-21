@@ -3,8 +3,8 @@
  */
 class Labyrinthe{
     private boolean[][] tableau;
-    private Coordonnee personnage;
-    private Coordonnee sortie;
+    private Coordonn personnage;
+    private Coordonn sortie;
 
 
     char getChar(int x, int y) {
