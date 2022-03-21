@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 /**
  * Squelette de classe labyrinthe
  */
@@ -78,7 +82,11 @@ public class Labyrinthe{
     }
 
     public static Labyrinthe chargerLabyrinthe(String nom) {
-        throw new Error("TODO");
+        try{
+            BufferedReader buff = new BufferedReader(new FileReader(nom));
+        }catch(FileNotFoundException e){
+            
+        }
     }
 
 }
