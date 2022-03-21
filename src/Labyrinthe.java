@@ -63,26 +63,22 @@ public class Labyrinthe{
         while(!this.murs[y][x]){
             int[] coord = this.getSuivant(x, y, action);  
             if(!this.murs[coord[1]][coord[0]]){
-                this.personnage.setPosition_Y(y+coord[1]);
-                this.personnage.setPosition_X(x+coord[0]);
+                this.personnage.setPosition_Y(coord[1]);
+                this.personnage.setPosition_X(coord[0]);
                 y = this.personnage.getPosition_Y();
                 x = this.personnage.getPosition_X();
             }
         }
-
     }
 
 
     public String toString() {
-        String info = "";
-        for (int i = 0; i<murs.){
-
-        }
+        throw new Error("TODO");
     }
 
 
     public boolean etreFini() {
-        return personnage.equals(sortie);
+        throw new Error("TODO");
     }
 
     public static Labyrinthe chargerLabyrinthe(String nom) {
