@@ -27,4 +27,8 @@ public class Position {
         return this.position_X == x && this.position_Y == y;
     }
 
+    public boolean equals(Position p){
+        return this.equals(p.position_X, p.position_Y);
+    }
+
 }
