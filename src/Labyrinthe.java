@@ -53,7 +53,18 @@ public class Labyrinthe{
 
 
     void deplacerPerso(String action) throws ActionInconnueException {
-        throw new Error("TODO");
+        int y = this.personnage.getPosition_Y();
+        int x = this.personnage.getPosition_X();
+
+        while(!this.murs[y][x]){
+            int[] coord = this.getSuivant(x, y, action);  
+            if(!this.murs[coord[1]][coord[0]]){
+                this.personnage.setPosition_Y(y+coord[1]);
+                this.personnage.setPosition_X(x+coord[0]);
+                y = this.personnage.getPosition_Y();
+                x = this.personnage.getPosition_X();
+            }
+        }
     }
 
 
