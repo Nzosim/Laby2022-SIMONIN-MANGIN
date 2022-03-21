@@ -70,7 +70,10 @@ public class Labyrinthe{
 
     public String toString() {
         String info = "";
-        for (int i = 0; i<murs.){
+        for (int i = 0; i<murs.length; i++){
+            for (int j = 0; j < murs[i].length; j++){
+
+            }
 
         }
     }
