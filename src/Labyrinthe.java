@@ -37,22 +37,13 @@ public class Labyrinthe{
 
 
     public static int[] getSuivant(int x, int y, String action) {
-        switch (action){
-            case HAUT :
-                x--;
-                break;
-            case BAS:
-                x++;
-                break;
-            case GAUCHE:
-                y--;
-                break;
-            case DROITE:
-                y++;
-                break;
+        switch (action) {
+            case HAUT -> x--;
+            case BAS -> x++;
+            case GAUCHE -> y--;
+            case DROITE -> y++;
         }
-        int [] position = {x,y};
-        return position;
+        return new int[]{x,y};
     }
 
 
@@ -61,7 +52,7 @@ public class Labyrinthe{
         int x = this.personnage.getPosition_X();
 
         while(!this.murs[y][x]){
-            int[] coord = this.getSuivant(x, y, action);  
+            int[] coord = getSuivant(x, y, action);
             if(!this.murs[coord[1]][coord[0]]){
                 this.personnage.setPosition_Y(coord[1]);
                 this.personnage.setPosition_X(coord[0]);
@@ -73,27 +64,27 @@ public class Labyrinthe{
 
 
     public String toString() {
-        String info = "";
+        StringBuilder info = new StringBuilder();
         for (int i = 0; i<murs.length; i++){
             for (int j = 0; j < murs[i].length; j++){
                 if (murs[j][i]){
-                    info+=MUR;
+                    info.append(MUR);
                 }else{
                     char temp = getChar(j,i);
                     switch (temp){
                         case PJ :
-                            info+= PJ;
+                            info.append(PJ);
                             break;
                         case SORTIE:
-                            info+= SORTIE;
+                            info.append(SORTIE);
                         case VIDE:
-                            info += VIDE;
+                            info.append(VIDE);
                     }
                 }
             }
-            info+="\n";
+            info.append("\n");
         }
-        return info;
+        return info.toString();
     }
 
 
