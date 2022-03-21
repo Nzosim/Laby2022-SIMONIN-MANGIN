@@ -31,6 +31,7 @@ class Labyrinthe{
     }
 
 
+
     static int[] getSuivant(int x, int y, String action) {
         switch (action){
             case HAUT :
