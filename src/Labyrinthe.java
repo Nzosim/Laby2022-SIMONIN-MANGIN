@@ -6,7 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Squelette de classe labyrinthe
  */
 class Labyrinthe{
-
+    private boolean[][] tableau;
+    private Personnage personnage;
 
     char getChar(int x, int y) {
         throw new Error("TODO");
