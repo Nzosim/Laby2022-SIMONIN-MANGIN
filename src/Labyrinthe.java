@@ -17,7 +17,17 @@ class Labyrinthe{
     public final static String DROITE = "droite";
 
     char getChar(int x, int y) {
-        throw new Error("TODO");
+        char res;
+        if (murs[x][y]){
+            res = MUR;
+        }else if (personnage.equals(y,x)){
+            res = PJ;
+        }else if (sortie.equals(y,x)){
+            res = SORTIE;
+        }else{
+            res = VIDE;
+        }
+        return res;
     }
 
 

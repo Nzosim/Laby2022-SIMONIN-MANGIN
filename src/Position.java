@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Position {
 
     private int position_X, position_Y;
@@ -21,6 +23,10 @@ public class Position {
 
     public void setPosition_Y(int position_Y) {
         this.position_Y = position_Y;
+    }
+
+    public boolean equals(int x,int y){
+        return this.position_X == x && this.position_Y == y;
     }
 
 }
