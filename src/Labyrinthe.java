@@ -9,6 +9,7 @@ class Labyrinthe{
     private boolean[][] tableau;
     private Personnage personnage;
 
+
     char getChar(int x, int y) {
         throw new Error("TODO");
     }
