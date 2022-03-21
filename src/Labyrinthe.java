@@ -69,6 +69,7 @@ public class Labyrinthe{
                 x = this.personnage.getPosition_X();
             }
         }
+
     }
 
 
