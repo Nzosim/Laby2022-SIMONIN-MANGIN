@@ -11,10 +11,10 @@ class Labyrinthe{
     public final static char SORTIE = 'S';
     public final static char VIDE = '.';
 
-    public final static char HAUT = "haut";
-    public final static char BAS = "bas";
-    public final static char GAUCHE = "gauche";
-    public final static char DROITE = "droite";
+    public final static String HAUT = "haut";
+    public final static String BAS = "bas";
+    public final static String GAUCHE = "gauche";
+    public final static String DROITE = "droite";
 
     char getChar(int x, int y) {
         throw new Error("TODO");
