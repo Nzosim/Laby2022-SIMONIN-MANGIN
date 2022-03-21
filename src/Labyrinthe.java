@@ -2,14 +2,19 @@
  * Squelette de classe labyrinthe
  */
 class Labyrinthe{
-    private boolean[][] tableau;
-    private Position personnage;
-    private Position sortie;
+    private boolean[][] murs;
+    private Personnage personnage;
+    private Sortie sortie;
 
     public final static char MUR = 'X';
     public final static char PJ = 'P';
     public final static char SORTIE = 'S';
     public final static char VIDE = '.';
+
+    public final static char HAUT = "haut";
+    public final static char BAS = "bas";
+    public final static char GAUCHE = "gauche";
+    public final static char DROITE = "droite";
 
     char getChar(int x, int y) {
         throw new Error("TODO");
