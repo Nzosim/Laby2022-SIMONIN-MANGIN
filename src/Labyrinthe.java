@@ -1,7 +1,7 @@
 /**
  * Squelette de classe labyrinthe
  */
-class Labyrinthe{
+public class Labyrinthe{
     private boolean[][] murs;
     private Personnage personnage;
     private Sortie sortie;
