@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Position {
 
     private int position_X, position_Y;
