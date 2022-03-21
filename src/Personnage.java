@@ -1,8 +1,8 @@
-public class Personnage {
+public class Coordonnee {
 
     private int position_X, position_Y;
 
-    public Personnage(int position_X, int position_Y) {
+    public Coordonnee(int position_X, int position_Y) {
         this.position_X = position_X;
         this.position_Y = position_Y;
     }
