@@ -74,12 +74,15 @@ public class Labyrinthe{
 
 
     public String toString() {
-        throw new Error("TODO");
+        String info = "";
+        for (int i = 0; i<murs.){
+
+        }
     }
 
 
     public boolean etreFini() {
-        throw new Error("TODO");
+        return personnage.equals(sortie);
     }
 
     public static Labyrinthe chargerLabyrinthe(String nom) {
