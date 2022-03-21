@@ -20,7 +20,7 @@ public class Labyrinthe{
     public final static String GAUCHE = "gauche";
     public final static String DROITE = "droite";
 
-    char getChar(int x, int y) {
+    public char getChar(int x, int y) {
         char res;
         if (murs[x][y]){
             res = MUR;
@@ -36,7 +36,7 @@ public class Labyrinthe{
 
 
 
-    static int[] getSuivant(int x, int y, String action) {
+    public static int[] getSuivant(int x, int y, String action) {
         switch (action){
             case HAUT :
                 x--;
@@ -56,7 +56,7 @@ public class Labyrinthe{
     }
 
 
-    void deplacerPerso(String action) throws ActionInconnueException {
+    public void deplacerPerso(String action) throws ActionInconnueException {
         int y = this.personnage.getPosition_Y();
         int x = this.personnage.getPosition_X();
 
