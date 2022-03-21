@@ -3,9 +3,13 @@
  */
 class Labyrinthe{
     private boolean[][] tableau;
-    private Coordonn personnage;
-    private Coordonn sortie;
+    private Coordonnee personnage;
+    private Coordonnee sortie;
 
+    public final static char MUR = 'X';
+    public final static char PJ = 'P';
+    public final static char SORTIE = 'S';
+    public final static char VIDE = '.';
 
     char getChar(int x, int y) {
         throw new Error("TODO");
