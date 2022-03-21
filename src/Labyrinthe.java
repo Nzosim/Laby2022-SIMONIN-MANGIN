@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 /**
  * Squelette de classe labyrinthe
  */
@@ -59,8 +63,8 @@ public class Labyrinthe{
         while(!this.murs[y][x]){
             int[] coord = this.getSuivant(x, y, action);  
             if(!this.murs[coord[1]][coord[0]]){
-                this.personnage.setPosition_Y(y+coord[1]);
-                this.personnage.setPosition_X(x+coord[0]);
+                this.personnage.setPosition_Y(coord[1]);
+                this.personnage.setPosition_X(coord[0]);
                 y = this.personnage.getPosition_Y();
                 x = this.personnage.getPosition_X();
             }
@@ -69,22 +73,20 @@ public class Labyrinthe{
 
 
     public String toString() {
-        String info = "";
-        for (int i = 0; i<murs.length; i++){
-            for (int j = 0; j < murs[i].length; j++){
-
-            }
-
-        }
+        throw new Error("TODO");
     }
 
 
     public boolean etreFini() {
-        return personnage.equals(sortie);
+        throw new Error("TODO");
     }
 
     public static Labyrinthe chargerLabyrinthe(String nom) {
-        throw new Error("TODO");
+        try{
+            BufferedReader buff = new BufferedReader(new FileReader(nom));
+        }catch(FileNotFoundException e){
+            
+        }
     }
 
 }
