@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOError;
+import java.io.IOException;
 
 /**
  * Squelette de classe labyrinthe
@@ -92,14 +94,29 @@ public class Labyrinthe{
         return personnage.equals(sortie);
     }
 
-    public static Labyrinthe chargerLabyrinthe(String nom) {
-        try{
+    public static Labyrinthe chargerLabyrinthe(String nom) throws IOException, FileNotFoundException{
             BufferedReader buff = new BufferedReader(new FileReader(nom));
-
             buff.close();
-        }catch(FileNotFoundException e){
-            System.out.println("Vueillez indiquer un fichier labyrinthe valide");
-        }
+            Labyrinthe laby = new Labyrinthe();
+            String ligne;
+            int y = Integer.parseInt(buff.readLine());
+            int x = Integer.parseInt(buff.readLine());
+            laby.murs = new boolean[y][x];
+            int ligneEnCour = 0;
+            while((ligne = buff.readLine()) != null){
+                if(ligne.length() > y) throw new ErreurFichier;
+                for(int i = 0 ; i < ligne.length() ; i++){
+                    if(ligne.charAt(i) == 'X'){
+                        laby.murs[ligneEnCour][i] = true;
+                    }else{
+                        laby.murs[ligneEnCour][i] = false;
+                    }
+                    if(ligne.charAt(i) == 'S') laby.sortie = new Sortie(ligneEnCour,i);
+                    if(ligne.charAt(i) == 'P') laby.personnage = new Personnage(ligneEnCour,i);
+                }
+                ligneEnCour ++;
+              }
+            return laby;
     }
 
 }
