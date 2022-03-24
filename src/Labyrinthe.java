@@ -94,36 +94,46 @@ public class Labyrinthe{
     }
 
     public static Labyrinthe chargerLabyrinthe(String nom) throws IOException, FileNotFoundException, FichierIncorrectException {
+
             BufferedReader buff = new BufferedReader(new FileReader(nom));
             Labyrinthe laby = new Labyrinthe();
-            String ligne;
 
             int y = Integer.parseInt(buff.readLine());
             int x = Integer.parseInt(buff.readLine());
-
             laby.murs = new boolean[x][y];
 
             boolean persoPlace = false, sortiePlace = false;
             int ligneEnCour = 0;
+            String ligne;
+
             while((ligne = buff.readLine()) != null){
+
                 if(ligne.length() > x) throw new FichierIncorrectException("nbLignes ne correspond pas");
                 if(ligneEnCour > y) throw new FichierIncorrectException("nbColonnes ne correspond pas");
-                for(int i = 0 ; i < ligne.length() ; i++){
-                    if(ligne.charAt(i) == 'S'){
-                        if(sortiePlace) throw new FichierIncorrectException("plusieurs sorties");
-                        laby.sortie = new Sortie(ligneEnCour,i);
-                        sortiePlace = true;
-                    }else if(ligne.charAt(i) == 'P'){
-                        if(sortiePlace) throw new FichierIncorrectException("plusieurs personnages");
-                        laby.personnage = new Personnage(ligneEnCour,i);
-                        persoPlace = true;
-                    }else if(ligne.charAt(i) == 'X'){
-                        laby.murs[ligneEnCour][i] = true;
-                    }else if(ligne.charAt(i) == '.'){
-                        laby.murs[ligneEnCour][i] = false;
-                    }else{
-                        throw new FichierIncorrectException("caractere inconnu "+ligne.charAt(i));
+
+                for(int i = 0 ; i < y ; i++){
+
+                    switch (ligne.charAt(i)) {
+
+                        case 'S':
+                            if(sortiePlace) throw new FichierIncorrectException("plusieurs sorties");
+                            laby.sortie = new Sortie(ligneEnCour,i);
+                            sortiePlace = true;
+                            break;
+                        case 'P':
+                            if(sortiePlace) throw new FichierIncorrectException("plusieurs personnages");
+                            laby.personnage = new Personnage(ligneEnCour,i);
+                            persoPlace = true;
+                            break;
+                        case 'X' :
+                            laby.murs[ligneEnCour][i] = true;
+                            break;
+                        case '.' :
+                            laby.murs[ligneEnCour][i] = false;
+                        default :
+                            throw new FichierIncorrectException("caractere inconnu "+ligne.charAt(i));
                     }
+
                 }
                 ligneEnCour ++;
             }
