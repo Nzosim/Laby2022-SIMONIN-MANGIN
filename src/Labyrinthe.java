@@ -40,10 +40,10 @@ public class Labyrinthe{
 
     public static int[] getSuivant(int x, int y, String action) {
         switch (action) {
-            case HAUT -> x--;
-            case BAS -> x++;
-            case GAUCHE -> y--;
-            case DROITE -> y++;
+            case HAUT : x--;
+            case BAS : x++;
+            case GAUCHE : y--;
+            case DROITE : y++;
         }
         return new int[]{x,y};
     }
