@@ -62,6 +62,8 @@ public class Labyrinthe{
 
         while(!this.murs[y][x]){
             int[] coord = getSuivant(x, y, action);
+            x = coord[0];
+            y = coord[1];
             if(!this.murs[coord[1]][coord[0]]){
                 this.personnage.setPosition_Y(coord[1]);
                 this.personnage.setPosition_X(coord[0]);
@@ -76,10 +78,10 @@ public class Labyrinthe{
         StringBuilder info = new StringBuilder();
         for (int i = 0; i<murs.length; i++){
             for (int j = 0; j < murs[i].length; j++){
-                if (murs[j][i]){
+                if (murs[i][j]){
                     info.append(MUR);
                 }else{
-                    char temp = getChar(j,i);
+                    char temp = getChar(i,j);
                     switch (temp){
                         case PJ :
                             info.append(PJ);
