@@ -101,10 +101,11 @@ public class Labyrinthe{
             String ligne;
             int y = Integer.parseInt(buff.readLine());
             int x = Integer.parseInt(buff.readLine());
-            laby.murs = new boolean[y][x];
+            laby.murs = new boolean[x][y];
             int ligneEnCour = 0;
             while((ligne = buff.readLine()) != null){
-                if(ligne.length() > y) throw new ErreurFichier();
+                if(ligne.length() > x) throw new ErreurFichier();
+                if(ligneEnCour > y) throw new ErreurFichier();
                 for(int i = 0 ; i < ligne.length() ; i++){
                     if(ligne.charAt(i) == 'X'){
                         laby.murs[ligneEnCour][i] = true;

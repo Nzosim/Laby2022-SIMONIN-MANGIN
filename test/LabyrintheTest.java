@@ -6,8 +6,14 @@ class LabyrintheTest {
 
     @Test
     public void test_01_getChar_Mur(){
-        //preparation des donnes
-        Labyrinthe laby = new Labyrinthe();
+        //preparation des donnees
+        Labyrinthe laby = Labyrinthe.chargerLabyrinthe("laby/laby0.txt");
+
+        assertEquals()
+
+
+
     }
+
 
 }
