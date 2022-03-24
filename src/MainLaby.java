@@ -41,6 +41,10 @@ public class MainLaby {
             do {
                 System.out.println("Quel sera votre prochaine action : haut, bas, gauche, droite ou exit");
                 entree = sc.nextLine().toLowerCase();
+
+                if (!actions.contains(entree)){
+                    System.out.println("Mauvaise action");
+                }
             }while (!actions.contains(entree));
 
             if (!entree.equals("exit")){
@@ -50,7 +54,12 @@ public class MainLaby {
 
             laby.deplacerPerso(entree);
 
+
             jeu = laby.etreFini();
+            if (jeu){
+                System.out.println("!!!  Vous avez reussi le labyrinthe  !!!");
+            }
         }
+        sc.close();
     }
 }
