@@ -105,39 +105,37 @@ public class Labyrinthe{
             laby.murs = new boolean[x][y];
 
             boolean persoPlace = false, sortiePlace = false;
-            int ligneEnCour = 0;
             String ligne;
 
-            while((ligne = buff.readLine()) != null){
+            for(int i = 0 ; i < y ; i++) {
 
-                if(ligne.length() > x) throw new FichierIncorrectException("nbLignes ne correspond pas");
-                if(ligneEnCour > y) throw new FichierIncorrectException("nbColonnes ne correspond pas");
+                ligne = buff.readLine();
 
-                for(int i = 0 ; i < y ; i++){
+                if (ligne.length() > x) throw new FichierIncorrectException("nbLignes ne correspond pas");
 
-                    switch (ligne.charAt(i)) {
+                for (int j = 0; j < y; j++) {
+
+                    switch (ligne.charAt(j)) {
                         case 'S':
-                            if(sortiePlace) throw new FichierIncorrectException("plusieurs sorties");
-                            laby.sortie = new Sortie(ligneEnCour,i);
+                            if (sortiePlace) throw new FichierIncorrectException("plusieurs sorties");
+                            laby.sortie = new Sortie(i, j);
                             sortiePlace = true;
                             break;
                         case 'P':
-                            if(persoPlace) throw new FichierIncorrectException("plusieurs personnages");
-                            laby.personnage = new Personnage(ligneEnCour,i);
+                            if (persoPlace) throw new FichierIncorrectException("plusieurs personnages");
+                            laby.personnage = new Personnage(i, j);
                             persoPlace = true;
                             break;
-                        case 'X' :
-                            laby.murs[ligneEnCour][i] = true;
+                        case 'X':
+                            laby.murs[i][j] = true;
                             break;
-                        case '.' :
-                            laby.murs[ligneEnCour][i] = false;
+                        case '.':
+                            laby.murs[i][i] = false;
                             break;
-                        default :
-                            throw new FichierIncorrectException("caractere inconnu "+ ligne.charAt(i));
+                        default:
+                            throw new FichierIncorrectException("caractere inconnu " + ligne.charAt(j));
                     }
-
                 }
-                ligneEnCour ++;
             }
 
             if(!sortiePlace) throw new FichierIncorrectException("sortie inconnue");
