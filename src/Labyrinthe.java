@@ -95,8 +95,10 @@ public class Labyrinthe{
     public static Labyrinthe chargerLabyrinthe(String nom) {
         try{
             BufferedReader buff = new BufferedReader(new FileReader(nom));
+
+            buff.close();
         }catch(FileNotFoundException e){
-            
+            System.out.println("Vueillez indiquer un fichier labyrinthe valide");
         }
     }
 
