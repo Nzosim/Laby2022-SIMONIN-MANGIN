@@ -93,7 +93,7 @@ public class Labyrinthe{
         return personnage.equals(sortie);
     }
 
-    public static Labyrinthe chargerLabyrinthe(String nom) throws IOException, FileNotFoundException, FichierIncorrectException {
+    public static Labyrinthe chargerLabyrinthe(String nom) throws IOException, FichierIncorrectException {
 
             BufferedReader buff = new BufferedReader(new FileReader(nom));
             Labyrinthe laby = new Labyrinthe();
@@ -114,14 +114,13 @@ public class Labyrinthe{
                 for(int i = 0 ; i < y ; i++){
 
                     switch (ligne.charAt(i)) {
-
                         case 'S':
                             if(sortiePlace) throw new FichierIncorrectException("plusieurs sorties");
                             laby.sortie = new Sortie(ligneEnCour,i);
                             sortiePlace = true;
                             break;
                         case 'P':
-                            if(sortiePlace) throw new FichierIncorrectException("plusieurs personnages");
+                            if(persoPlace) throw new FichierIncorrectException("plusieurs personnages");
                             laby.personnage = new Personnage(ligneEnCour,i);
                             persoPlace = true;
                             break;
@@ -130,8 +129,9 @@ public class Labyrinthe{
                             break;
                         case '.' :
                             laby.murs[ligneEnCour][i] = false;
+                            break;
                         default :
-                            throw new FichierIncorrectException("caractere inconnu "+ligne.charAt(i));
+                            throw new FichierIncorrectException("caractere inconnu "+ ligne.charAt(i));
                     }
 
                 }
