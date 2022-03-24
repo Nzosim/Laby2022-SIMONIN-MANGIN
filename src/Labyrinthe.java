@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOError;
 import java.io.IOException;
 
 /**
@@ -94,7 +93,7 @@ public class Labyrinthe{
         return personnage.equals(sortie);
     }
 
-    public static Labyrinthe chargerLabyrinthe(String nom) throws IOException, FileNotFoundException, ErreurFichier{
+    public static Labyrinthe chargerLabyrinthe(String nom) throws IOException, FileNotFoundException, FichierIncorrectException {
             BufferedReader buff = new BufferedReader(new FileReader(nom));
             Labyrinthe laby = new Labyrinthe();
             String ligne;
@@ -107,15 +106,15 @@ public class Labyrinthe{
             boolean persoPlace = false, sortiePlace = false;
             int ligneEnCour = 0;
             while((ligne = buff.readLine()) != null){
-                if(ligne.length() > x) throw new ErreurFichier("nbLignes ne correspond pas");
-                if(ligneEnCour > y) throw new ErreurFichier("nbColonnes ne correspond pas");
+                if(ligne.length() > x) throw new FichierIncorrectException("nbLignes ne correspond pas");
+                if(ligneEnCour > y) throw new FichierIncorrectException("nbColonnes ne correspond pas");
                 for(int i = 0 ; i < ligne.length() ; i++){
                     if(ligne.charAt(i) == 'S'){
-                        if(sortiePlace) throw new ErreurFichier("plusieurs sorties");
+                        if(sortiePlace) throw new FichierIncorrectException("plusieurs sorties");
                         laby.sortie = new Sortie(ligneEnCour,i);
                         sortiePlace = true;
                     }else if(ligne.charAt(i) == 'P'){
-                        if(sortiePlace) throw new ErreurFichier("plusieurs personnages");
+                        if(sortiePlace) throw new FichierIncorrectException("plusieurs personnages");
                         laby.personnage = new Personnage(ligneEnCour,i);
                         persoPlace = true;
                     }else if(ligne.charAt(i) == 'X'){
@@ -123,14 +122,14 @@ public class Labyrinthe{
                     }else if(ligne.charAt(i) == '.'){
                         laby.murs[ligneEnCour][i] = false;
                     }else{
-                        throw new ErreurFichier("caractere inconnu "+ligne.charAt(i));
+                        throw new FichierIncorrectException("caractere inconnu "+ligne.charAt(i));
                     }
                 }
                 ligneEnCour ++;
             }
 
-            if(!sortiePlace) throw new ErreurFichier("sortie inconnue");
-            if(!persoPlace) throw new ErreurFichier("personnage inconnue");
+            if(!sortiePlace) throw new FichierIncorrectException("sortie inconnue");
+            if(!persoPlace) throw new FichierIncorrectException("personnage inconnue");
 
             buff.close();
             return laby;

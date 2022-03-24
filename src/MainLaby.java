@@ -16,7 +16,7 @@ public class MainLaby {
         }catch (FileNotFoundException e){
             System.out.println("Le fichier n'existe pas");
             jeu = true;
-        }catch (ErreurFichier e){
+        }catch (FichierIncorrectException e){
             System.out.println("Le labyrinthe du fichier n'est pas conforme");
             jeu = true;
         }catch (IOException e){
