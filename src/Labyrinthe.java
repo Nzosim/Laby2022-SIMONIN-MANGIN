@@ -94,7 +94,7 @@ public class Labyrinthe{
         return personnage.equals(sortie);
     }
 
-    public static Labyrinthe chargerLabyrinthe(String nom) throws IOException, FileNotFoundException{
+    public static Labyrinthe chargerLabyrinthe(String nom) throws IOException, FileNotFoundException, ErreurFichier{
             BufferedReader buff = new BufferedReader(new FileReader(nom));
             buff.close();
             Labyrinthe laby = new Labyrinthe();
@@ -104,7 +104,7 @@ public class Labyrinthe{
             laby.murs = new boolean[y][x];
             int ligneEnCour = 0;
             while((ligne = buff.readLine()) != null){
-                if(ligne.length() > y) throw new ErreurFichier;
+                if(ligne.length() > y) throw new ErreurFichier();
                 for(int i = 0 ; i < ligne.length() ; i++){
                     if(ligne.charAt(i) == 'X'){
                         laby.murs[ligneEnCour][i] = true;
