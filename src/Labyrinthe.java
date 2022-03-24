@@ -78,8 +78,10 @@ public class Labyrinthe{
                             break;
                         case SORTIE:
                             info.append(SORTIE);
+                            break;
                         case VIDE:
                             info.append(VIDE);
+                            break;
                     }
                 }
             }
