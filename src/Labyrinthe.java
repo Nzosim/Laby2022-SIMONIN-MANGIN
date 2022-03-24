@@ -49,7 +49,7 @@ public class Labyrinthe{
     }
 
 
-    public void deplacerPerso(String action) throws ActionInconnueException {
+    public void deplacerPerso(String action) {
         int y = this.personnage.getPosition_Y();
         int x = this.personnage.getPosition_X();
 
@@ -96,7 +96,6 @@ public class Labyrinthe{
 
     public static Labyrinthe chargerLabyrinthe(String nom) throws IOException, FileNotFoundException, ErreurFichier{
             BufferedReader buff = new BufferedReader(new FileReader(nom));
-            buff.close();
             Labyrinthe laby = new Labyrinthe();
             String ligne;
             int y = Integer.parseInt(buff.readLine());
@@ -117,6 +116,7 @@ public class Labyrinthe{
                 }
                 ligneEnCour ++;
               }
+            buff.close();
             return laby;
     }
 
