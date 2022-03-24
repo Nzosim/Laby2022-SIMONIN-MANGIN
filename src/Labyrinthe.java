@@ -81,22 +81,12 @@ public class Labyrinthe{
                 if (murs[i][j]){
                     info.append(MUR);
                 }else{
-                    char temp = getChar(i,j);
-                    switch (temp){
-                        case PJ :
-                            info.append(PJ);
-                            break;
-                        case SORTIE:
-                            info.append(SORTIE);
-                            break;
-                        case VIDE:
-                            info.append(VIDE);
-                            break;
-                    }
+                    info.append(getChar(i,j));
                 }
             }
             info.append("\n");
         }
+        System.out.println(info);
         return info.toString();
     }
 
