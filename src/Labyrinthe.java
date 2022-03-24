@@ -98,24 +98,40 @@ public class Labyrinthe{
             BufferedReader buff = new BufferedReader(new FileReader(nom));
             Labyrinthe laby = new Labyrinthe();
             String ligne;
+
             int y = Integer.parseInt(buff.readLine());
             int x = Integer.parseInt(buff.readLine());
+
             laby.murs = new boolean[x][y];
+
+            boolean persoPlace = false, sortiePlace = false;
             int ligneEnCour = 0;
             while((ligne = buff.readLine()) != null){
-                if(ligne.length() > x) throw new ErreurFichier();
-                if(ligneEnCour > y) throw new ErreurFichier();
+                if(ligne.length() > x) throw new ErreurFichier("nbLignes ne correspond pas");
+                if(ligneEnCour > y) throw new ErreurFichier("nbColonnes ne correspond pas");
                 for(int i = 0 ; i < ligne.length() ; i++){
-                    if(ligne.charAt(i) == 'X'){
+                    if(ligne.charAt(i) == 'S'){
+                        if(sortiePlace) throw new ErreurFichier("plusieurs sorties");
+                        laby.sortie = new Sortie(ligneEnCour,i);
+                        sortiePlace = true;
+                    }else if(ligne.charAt(i) == 'P'){
+                        if(sortiePlace) throw new ErreurFichier("plusieurs personnages");
+                        laby.personnage = new Personnage(ligneEnCour,i);
+                        persoPlace = true;
+                    }else if(ligne.charAt(i) == 'X'){
                         laby.murs[ligneEnCour][i] = true;
-                    }else{
+                    }else if(ligne.charAt(i) == '.'){
                         laby.murs[ligneEnCour][i] = false;
+                    }else{
+                        throw new ErreurFichier("caractere inconnu "+ligne.charAt(i));
                     }
-                    if(ligne.charAt(i) == 'S') laby.sortie = new Sortie(ligneEnCour,i);
-                    if(ligne.charAt(i) == 'P') laby.personnage = new Personnage(ligneEnCour,i);
                 }
                 ligneEnCour ++;
-              }
+            }
+
+            if(!sortiePlace) throw new ErreurFichier("sortie inconnue");
+            if(!persoPlace) throw new ErreurFichier("personnage inconnue");
+
             buff.close();
             return laby;
     }
