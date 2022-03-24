@@ -39,10 +39,18 @@ public class Labyrinthe{
 
     public static int[] getSuivant(int x, int y, String action) {
         switch (action) {
-            case HAUT : x--;
-            case BAS : x++;
-            case GAUCHE : y--;
-            case DROITE : y++;
+            case HAUT :
+                x--;
+                break;
+            case BAS :
+                x++;
+                break;
+            case GAUCHE :
+                y--;
+                break;
+            case DROITE :
+                y++;
+                break;
         }
         return new int[]{x,y};
     }
@@ -108,7 +116,6 @@ public class Labyrinthe{
             String ligne;
 
             for(int i = 0 ; i < y ; i++) {
-
                 ligne = buff.readLine();
 
                 if (ligne.length() > x) throw new FichierIncorrectException("nbLignes ne correspond pas");
@@ -138,11 +145,11 @@ public class Labyrinthe{
                 }
             }
 
-            if(!sortiePlace) throw new FichierIncorrectException("sortie inconnue");
-            if(!persoPlace) throw new FichierIncorrectException("personnage inconnue");
+        if(!sortiePlace) throw new FichierIncorrectException("sortie inconnue");
+        if(!persoPlace) throw new FichierIncorrectException("personnage inconnue");
 
-            buff.close();
-            return laby;
+        buff.close();
+        return laby;
     }
 
 }
