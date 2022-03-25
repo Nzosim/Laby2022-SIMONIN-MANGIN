@@ -75,11 +75,11 @@ public class Labyrinthe {
     public String toString() {
         StringBuilder info = new StringBuilder();
 
-        int largeur = this.murs[0].length;
-        int hauteur = this.murs.length;
+        int hauteur = this.murs[0].length;
+        int largeur = this.murs.length;
 
-        for (int i = 0; i < largeur; i++) {
-            for (int j = 0; j < hauteur; j++) {
+        for (int i = 0; i < hauteur; i++) {
+            for (int j = 0; j < largeur; j++) {
                 info.append(getChar(j, i));
             }
             info.append("\n");
