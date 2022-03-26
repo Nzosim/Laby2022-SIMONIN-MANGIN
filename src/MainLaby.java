@@ -27,7 +27,7 @@ public class MainLaby {
         Scanner sc = new Scanner(System.in);
         String entree = "";
 
-        ArrayList<String> actions = new ArrayList<String>();
+        ArrayList<String> actions = new ArrayList<>();
         actions.add(Labyrinthe.HAUT);
         actions.add(Labyrinthe.BAS);
         actions.add(Labyrinthe.DROITE);
@@ -35,7 +35,7 @@ public class MainLaby {
         actions.add("exit");
 
 
-        while (!jeu && !entree.equals("exit")){
+        while (!jeu){
             System.out.println(laby);
 
             do {
@@ -47,7 +47,7 @@ public class MainLaby {
                 }
             }while (!actions.contains(entree));
 
-            if (!entree.equals("exit")){
+            if (entree.equals("exit")){
                 System.out.println("Vous avez abandonnée la partie");
                 System.exit(0);
             }
