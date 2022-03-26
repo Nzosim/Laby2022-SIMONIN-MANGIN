@@ -115,12 +115,12 @@ public class Labyrinthe {
                 switch (ligne.charAt(j)) {
                     case 'S':
                         if (sortiePlace) throw new FichierIncorrectException("plusieurs sorties");
-                        laby.sortie = new Sortie(i, j);
+                        laby.sortie = new Sortie(j, i);
                         sortiePlace = true;
                         break;
                     case 'P':
                         if (persoPlace) throw new FichierIncorrectException("plusieurs personnages");
-                        laby.personnage = new Personnage(i, j);
+                        laby.personnage = new Personnage(j, i);
                         persoPlace = true;
                         break;
                     case 'X':
