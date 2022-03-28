@@ -38,16 +38,16 @@ public class Labyrinthe {
     public static int[] getSuivant(int x, int y, String action) {
         switch (action) {
             case HAUT:
-                x--;
-                break;
-            case BAS:
-                x++;
-                break;
-            case GAUCHE:
                 y--;
                 break;
-            case DROITE:
+            case BAS:
                 y++;
+                break;
+            case GAUCHE:
+                x--;
+                break;
+            case DROITE:
+                x++;
                 break;
         }
         return new int[]{x, y};
@@ -84,7 +84,6 @@ public class Labyrinthe {
             }
             info.append("\n");
         }
-        System.out.println(info);
         return info.toString();
     }
 
