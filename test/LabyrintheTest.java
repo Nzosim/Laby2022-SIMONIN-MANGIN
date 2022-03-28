@@ -1,14 +1,21 @@
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LabyrintheTest {
 
     @Test
-    public void test_01_getChar_Mur(){
-        //preparation des donnees
+    public void test_01_getChar() throws FichierIncorrectException, IOException {
+        Labyrinthe l = Labyrinthe.chargerLabyrinthe("laby/laby0.txt");
+        assertEquals('X', l.getChar(0,0), "Cela devrait etre un mur");
+        assertEquals('S', l.getChar(1,1), "Cela devrait etre la sortie");
+        assertEquals('.', l.getChar(1,2), "Cela devrait etre une case vide");
+        assertEquals('P', l.getChar(3,2), "Cela devrait etre le personnage");
     }
 
+    /*
     @Test
     public void test_02_getSuivant_OK(){
         int x = 4;
@@ -28,6 +35,6 @@ class LabyrintheTest {
         assertEquals(4, droite[0], "Cela devrait etre a 4");
         assertEquals(11, droite[1], "Cela devrait etre a 11");
     }
-
+*/
 
 }
