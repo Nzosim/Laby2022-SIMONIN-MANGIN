@@ -38,16 +38,16 @@ public class Labyrinthe {
     public static int[] getSuivant(int x, int y, String action) {
         switch (action) {
             case HAUT:
-                y--;
-                break;
-            case BAS:
-                y++;
-                break;
-            case GAUCHE:
                 x--;
                 break;
-            case DROITE:
+            case BAS:
                 x++;
+                break;
+            case GAUCHE:
+                y--;
+                break;
+            case DROITE:
+                y++;
                 break;
         }
         return new int[]{x, y};
@@ -114,12 +114,12 @@ public class Labyrinthe {
                 switch (ligne.charAt(j)) {
                     case 'S':
                         if (sortiePlace) throw new FichierIncorrectException("plusieurs sorties");
-                        laby.sortie = new Sortie(j, i);
+                        laby.sortie = new Sortie(i, j);
                         sortiePlace = true;
                         break;
                     case 'P':
                         if (persoPlace) throw new FichierIncorrectException("plusieurs personnages");
-                        laby.personnage = new Personnage(j, i);
+                        laby.personnage = new Personnage(i, j);
                         persoPlace = true;
                         break;
                     case 'X':

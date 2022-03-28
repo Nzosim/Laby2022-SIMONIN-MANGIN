@@ -32,4 +32,11 @@ public class Position {
         return this.equals(p.position_X, p.position_Y);
     }
 
+    @Override
+    public String toString() {
+        return "Position{" +
+                "position_X=" + position_X +
+                ", position_Y=" + position_Y +
+                '}';
+    }
 }
