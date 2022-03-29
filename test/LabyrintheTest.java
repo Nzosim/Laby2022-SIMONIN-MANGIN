@@ -42,15 +42,18 @@ class LabyrintheTest {
         System.out.println(l);
         assertEquals('P', l.getChar(1,3), "Le personnage devrait etre en 1, 3");
         assertEquals('.', l.getChar(2,3), "La case 2, 3 devrait etre vide");
-        /*l.deplacerPerso("droite");
+
+        l.deplacerPerso("droite");
         assertEquals('P', l.getChar(1,5), "Le personnage devrait etre en 5, 1");
         assertEquals('.', l.getChar(1,3), "La case 3, 1 devrait etre vide");
+
         l.deplacerPerso("bas");
-        assertEquals('P', l.getChar(1,5), "Le personnage devrait etre en 5, 1");
-        assertEquals('.', l.getChar(1,3), "La case 3, 1 devrait etre vide");
+        assertEquals('P', l.getChar(3,5), "Le personnage devrait etre en 5, 1");
+        assertEquals('.', l.getChar(1,5), "La case 3, 1 devrait etre vide");
+
         l.deplacerPerso("gauche");
-        assertEquals('P', l.getChar(1,5), "Le personnage devrait etre en 5, 1");
-        assertEquals('.', l.getChar(1,3), "La case 3, 1 devrait etre vide");*/
+        assertEquals('P', l.getChar(3,1), "Le personnage devrait etre en 5, 1");
+        assertEquals('.', l.getChar(3,5), "La case 3, 1 devrait etre vide");
     }
 
 }
