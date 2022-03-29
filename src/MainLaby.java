@@ -52,7 +52,11 @@ public class MainLaby {
                 System.exit(0);
             }
 
-            laby.deplacerPerso(entree);
+            // Puisque l'on a fait une verification sur les actions, aucune action ne peut être levée
+            try{
+                laby.deplacerPerso(entree);
+            }catch (ActionInconnueException e){}
+
 
 
             jeu = laby.etreFini();

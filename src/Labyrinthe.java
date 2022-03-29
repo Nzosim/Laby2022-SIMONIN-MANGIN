@@ -35,7 +35,7 @@ public class Labyrinthe {
     }
 
 
-    public static int[] getSuivant(int x, int y, String action) {
+    public static int[] getSuivant(int x, int y, String action) throws ActionInconnueException {
         switch (action) {
             case HAUT:
                 x--;
@@ -49,12 +49,15 @@ public class Labyrinthe {
             case DROITE:
                 y++;
                 break;
+            default:
+                throw new ActionInconnueException("Action inconnue");
+
         }
         return new int[]{x, y};
     }
 
 
-    public void deplacerPerso(String action) {
+    public void deplacerPerso(String action) throws ActionInconnueException {
         int y = this.personnage.getPosition_Y();
         int x = this.personnage.getPosition_X();
 
