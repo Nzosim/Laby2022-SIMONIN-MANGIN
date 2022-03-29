@@ -24,11 +24,11 @@ public class Position {
         this.position_Y = position_Y;
     }
 
-    public boolean equals(int x,int y){
+    public boolean equals(int x, int y) {
         return this.position_X == x && this.position_Y == y;
     }
 
-    public boolean equals(Position p){
+    public boolean equals(Position p) {
         return this.equals(p.position_X, p.position_Y);
     }
 

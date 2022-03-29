@@ -24,6 +24,6 @@ public class ActionInconnueException extends Exception {
 
     @Override
     public String getMessage() {
-        return "Action InconnueException : "+super.getMessage()+" "+LocalDate.now();
+        return "Action InconnueException : " + super.getMessage() + " " + LocalDate.now();
     }
 }

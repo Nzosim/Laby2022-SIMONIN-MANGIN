@@ -1,28 +1,29 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class LabyrintheTest {
 
     @Test
     public void test_01_getChar_OK() throws FichierIncorrectException, IOException {
         Labyrinthe l = Labyrinthe.chargerLabyrinthe("laby/laby0.txt");
-        assertEquals('X', l.getChar(0,0), "Cela devrait etre un mur");
-        assertEquals('S', l.getChar(1,1), "Cela devrait etre la sortie");
-        assertEquals('.', l.getChar(1,2), "Cela devrait etre une case vide");
-        assertEquals('P', l.getChar(2,3), "Cela devrait etre le personnage");
+        assertEquals('X', l.getChar(0, 0), "Cela devrait etre un mur");
+        assertEquals('S', l.getChar(1, 1), "Cela devrait etre la sortie");
+        assertEquals('.', l.getChar(1, 2), "Cela devrait etre une case vide");
+        assertEquals('P', l.getChar(2, 3), "Cela devrait etre le personnage");
     }
 
     @Test
-    public void test_02_getSuivant_OK(){
+    public void test_02_getSuivant_OK() {
         int x = 3;
         int y = 5;
-        try{
-            int [] haut = Labyrinthe.getSuivant(x,y,"haut");
-            int [] bas = Labyrinthe.getSuivant(x,y,"bas");
-            int [] gauche = Labyrinthe.getSuivant(x,y,"gauche");
-            int [] droite = Labyrinthe.getSuivant(x,y,"droite");
+        try {
+            int[] haut = Labyrinthe.getSuivant(x, y, "haut");
+            int[] bas = Labyrinthe.getSuivant(x, y, "bas");
+            int[] gauche = Labyrinthe.getSuivant(x, y, "gauche");
+            int[] droite = Labyrinthe.getSuivant(x, y, "droite");
 
             assertEquals(2, haut[0], "Cela devrait etre a 2");
             assertEquals(5, haut[1], "Cela devrait etre a 5");
@@ -33,17 +34,17 @@ class LabyrintheTest {
             assertEquals(4, gauche[1], "Cela devrait etre a 4");
             assertEquals(3, droite[0], "Cela devrait etre a 3");
             assertEquals(6, droite[1], "Cela devrait etre a 6");
-        }catch (ActionInconnueException e){
+        } catch (ActionInconnueException e) {
             fail("Cela devrait etre une action connue");
         }
 
     }
 
     @Test
-    public void test_03_getSuivant_Exception(){
+    public void test_03_getSuivant_Exception() {
         int x = 3;
         int y = 5;
-        assertThrows(ActionInconnueException.class, () -> Labyrinthe.getSuivant(x,y,"boo"));
+        assertThrows(ActionInconnueException.class, () -> Labyrinthe.getSuivant(x, y, "boo"));
     }
 
     @Test
@@ -51,21 +52,21 @@ class LabyrintheTest {
         Labyrinthe l = Labyrinthe.chargerLabyrinthe("laby/laby0.txt");
         try {
             l.deplacerPerso("haut");
-            assertEquals('P', l.getChar(1,3), "Le personnage devrait etre en 1, 3");
-            assertEquals('.', l.getChar(2,3), "La case 2, 3 devrait etre vide");
+            assertEquals('P', l.getChar(1, 3), "Le personnage devrait etre en 1, 3");
+            assertEquals('.', l.getChar(2, 3), "La case 2, 3 devrait etre vide");
 
             l.deplacerPerso("droite");
-            assertEquals('P', l.getChar(1,5), "Le personnage devrait etre en 5, 1");
-            assertEquals('.', l.getChar(1,3), "La case 3, 1 devrait etre vide");
+            assertEquals('P', l.getChar(1, 5), "Le personnage devrait etre en 5, 1");
+            assertEquals('.', l.getChar(1, 3), "La case 3, 1 devrait etre vide");
 
             l.deplacerPerso("bas");
-            assertEquals('P', l.getChar(3,5), "Le personnage devrait etre en 5, 1");
-            assertEquals('.', l.getChar(1,5), "La case 3, 1 devrait etre vide");
+            assertEquals('P', l.getChar(3, 5), "Le personnage devrait etre en 5, 1");
+            assertEquals('.', l.getChar(1, 5), "La case 3, 1 devrait etre vide");
 
             l.deplacerPerso("gauche");
-            assertEquals('P', l.getChar(3,1), "Le personnage devrait etre en 5, 1");
-            assertEquals('.', l.getChar(3,5), "La case 3, 1 devrait etre vide");
-        }catch (ActionInconnueException e){
+            assertEquals('P', l.getChar(3, 1), "Le personnage devrait etre en 5, 1");
+            assertEquals('.', l.getChar(3, 5), "La case 3, 1 devrait etre vide");
+        } catch (ActionInconnueException e) {
             fail("Cela devrait etre une action connue");
         }
 
@@ -75,10 +76,10 @@ class LabyrintheTest {
     @Test
     public void test_05_etreFini_OK() throws FichierIncorrectException, IOException {
         Labyrinthe l = Labyrinthe.chargerLabyrinthe("laby/laby0.txt");
-        try{
+        try {
             l.deplacerPerso("haut");
             l.deplacerPerso("gauche");
-        }catch (ActionInconnueException e){
+        } catch (ActionInconnueException e) {
             fail("Cela devrait etre une action connue");
         }
 
@@ -93,7 +94,7 @@ class LabyrintheTest {
         try {
             l.deplacerPerso("haut");
             l.deplacerPerso("gauche");
-        }catch (ActionInconnueException e){
+        } catch (ActionInconnueException e) {
             fail("Cela devrait etre une action connue");
         }
 
@@ -105,14 +106,14 @@ class LabyrintheTest {
         // donc toutes les autres lignes ne contienne que des '.'
 
         // On verifie la premiere ligne du labyrinthe
-        for (int i = 2; i < labyrinthe[1].length()-1; i++) {
+        for (int i = 2; i < labyrinthe[1].length() - 1; i++) {
             assertEquals('.', l.getChar(1, i), "La case " + 1 + "," + i + " devrait etre vide");
         }
 
         // On verifie les autres lignes du labyrinthe
-        for (int i = 2; i < labyrinthe.length-1; i++) {
-            for (int j = 1; j < labyrinthe[i].length()-1; j++) {
-                assertEquals('.', l.getChar(i,j), "La case " + i + "," + j + " devrait etre vide");
+        for (int i = 2; i < labyrinthe.length - 1; i++) {
+            for (int j = 1; j < labyrinthe[i].length() - 1; j++) {
+                assertEquals('.', l.getChar(i, j), "La case " + i + "," + j + " devrait etre vide");
             }
         }
 
