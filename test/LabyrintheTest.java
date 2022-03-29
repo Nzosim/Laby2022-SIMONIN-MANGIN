@@ -40,15 +40,10 @@ class LabyrintheTest {
     }
 
     @Test
-    public void test_03_getSuivant_KO(){
+    public void test_03_getSuivant_Exception(){
         int x = 3;
         int y = 5;
-        try{
-            Labyrinthe.getSuivant(x,y,"boo");
-            fail("Cela devrait etre une action inconnue");
-        }catch (ActionInconnueException e){
-            assertEquals(e.getMessage(), "Action inconnue", "Cela devrait etre une action inconnue");
-        }
+        assertThrows(ActionInconnueException.class, () -> Labyrinthe.getSuivant(x,y,"boo"));
     }
 
     @Test
