@@ -84,7 +84,6 @@ public class Labyrinthe {
             }
             info.append("\n");
         }
-        System.out.println(personnage+"\n"+sortie);
         return info.toString();
     }
 

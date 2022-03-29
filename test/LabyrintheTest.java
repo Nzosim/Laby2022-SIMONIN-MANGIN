@@ -24,7 +24,7 @@ class LabyrintheTest {
         int [] gauche = Labyrinthe.getSuivant(x,y,"gauche");
         int [] droite = Labyrinthe.getSuivant(x,y,"droite");
 
-        assertEquals(2,haut[0], "Cela devrait etre a 2");
+        assertEquals(2, haut[0], "Cela devrait etre a 2");
         assertEquals(5, haut[1], "Cela devrait etre a 5");
         assertEquals(4, bas[0], "Cela devrait etre a 4");
         assertEquals(5, bas[1], "Cela devrait etre a 5");
@@ -39,7 +39,6 @@ class LabyrintheTest {
     public void test_03_deplacerPerso_OK() throws FichierIncorrectException, IOException {
         Labyrinthe l = Labyrinthe.chargerLabyrinthe("laby/laby0.txt");
         l.deplacerPerso("haut");
-        System.out.println(l);
         assertEquals('P', l.getChar(1,3), "Le personnage devrait etre en 1, 3");
         assertEquals('.', l.getChar(2,3), "La case 2, 3 devrait etre vide");
 
@@ -54,6 +53,46 @@ class LabyrintheTest {
         l.deplacerPerso("gauche");
         assertEquals('P', l.getChar(3,1), "Le personnage devrait etre en 5, 1");
         assertEquals('.', l.getChar(3,5), "La case 3, 1 devrait etre vide");
+    }
+
+
+    @Test
+    public void test_04_etreFini_OK() throws FichierIncorrectException, IOException {
+        Labyrinthe l = Labyrinthe.chargerLabyrinthe("laby/laby0.txt");
+        l.deplacerPerso("haut");
+        l.deplacerPerso("gauche");
+
+        // On verifie que le personnage est bien sur la sortie
+        assertTrue(l.etreFini(), "La partie devrait etre finie");
+    }
+
+    @Test
+    public void test_05_etreFini_avance() throws FichierIncorrectException, IOException {
+        Labyrinthe l = Labyrinthe.chargerLabyrinthe("laby/laby0.txt");
+        l.deplacerPerso("haut");
+        l.deplacerPerso("gauche");
+
+        // Definition du labyrinthe
+        // Pour que avoir les x et y du labyrinthe
+        String[] labyrinthe = l.toString().split("\n");
+
+        // On verifie que le personnage est bien sur la sortie sans utiliser la methode getChar
+        // donc toutes les autres lignes ne contienne que des '.'
+
+        // On verifie la premiere ligne du labyrinthe
+        for (int i = 2; i < labyrinthe[1].length()-1; i++) {
+            assertEquals('.', l.getChar(1, i), "La case " + 1 + "," + i + " devrait etre vide");
+        }
+
+        // On verifie les autres lignes du labyrinthe
+        for (int i = 2; i < labyrinthe.length-1; i++) {
+            for (int j = 1; j < labyrinthe[i].length()-1; j++) {
+                assertEquals('.', l.getChar(i,j), "La case " + i + "," + j + " devrait etre vide");
+            }
+        }
+
+        // On verifie que le personnage est bien sur la sortie
+        assertTrue(l.etreFini(), "La partie devrait etre finie");
     }
 
 }
