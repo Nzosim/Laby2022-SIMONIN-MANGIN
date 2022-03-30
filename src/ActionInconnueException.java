@@ -1,27 +1,29 @@
 import java.time.LocalDate;
 
+/**
+ * public class ActionInconnueException
+ * Exception lance lorsqu'une action effectue par le joueur est inconnue
+ */
 public class ActionInconnueException extends Exception {
     /**
-     * Constructs a new exception with the specified detail message.  The
-     * cause is not initialized, and may subsequently be initialized by
-     * a call to {@link #initCause}.
-     *
-     * @param message the detail message. The detail message is saved for
-     *                later retrieval by the {@link #getMessage()} method.
+     * constructeur de la classe ActionInconnueException
+     * @param message message detaille de l'erreur rencontre
      */
     public ActionInconnueException(String message) {
         super(message);
     }
 
     /**
-     * Constructs a new exception with {@code null} as its detail message.
-     * The cause is not initialized, and may subsequently be initialized by a
-     * call to {@link #initCause}.
+     * constructeur vide de la classe ActionInconnueException
      */
     public ActionInconnueException() {
         super();
     }
 
+    /**
+     * methode getMessage de la classe ActionInconnueException
+     * @return le message de d'erreur
+     */
     @Override
     public String getMessage() {
         return "Action InconnueException : " + super.getMessage() + " " + LocalDate.now();
