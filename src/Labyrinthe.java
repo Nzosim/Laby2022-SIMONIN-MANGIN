@@ -3,23 +3,48 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Squelette de classe labyrinthe
+ * public class Labyrinthe
  */
 public class Labyrinthe {
+
+    /**
+     * attribut prive de la classe labyrinthe
+     * mur un tableau de booleen a double dimensions qui represente si l'emplacement est un mur ou non
+     * le personnage de type Personnage
+     * la sortie de type Sortie
+     */
     private boolean[][] murs;
     private Personnage personnage;
     private Sortie sortie;
 
+    /**
+     * final constante de la classe labyrinthe qui represente comment sont represente dans le labyrinthe
+     * les murs, le personnage, la sortie et les zone vide
+     * MUR qui represente les murs avec un X
+     * PJ qui represente le personnage avec un P
+     * SORTIE qui represente la sortie avec un S
+     * VIDE qui represente les cases vide avec un .
+     */
     public final static char MUR = 'X';
     public final static char PJ = 'P';
     public final static char SORTIE = 'S';
     public final static char VIDE = '.';
 
+    /**
+     * final constante de la classe qui represente les mouvement du personnage dans le labyrinthe
+     */
     public final static String HAUT = "haut";
     public final static String BAS = "bas";
     public final static String GAUCHE = "gauche";
     public final static String DROITE = "droite";
 
+    /**
+     * methode getChar qui retourne le type d'une case (mur, case vide, personnage, sortie)
+     * en fonction de ces coordonnee x et y
+     * @param x position en x
+     * @param y position en y
+     * @return type de la case
+     */
     public char getChar(int x, int y) {
         char res;
         if (murs[x][y]) {
@@ -34,7 +59,14 @@ public class Labyrinthe {
         return res;
     }
 
-
+    /**
+     * methode getSuivant qui retourne la case suivante du personnage en fonction d'une action (haut,bas,gauche,droite)
+     * @param x position en x actuel du personnage
+     * @param y position en y actuel du personnage
+     * @param action action que le personnage effectue
+     * @return la position du personnage apres le deplacement
+     * @throws ActionInconnueException exception en cas d'action inconnue, les actions connues sont (haut,bas,gauche,droite)
+     */
     public static int[] getSuivant(int x, int y, String action) throws ActionInconnueException {
         switch (action) {
             case HAUT:
@@ -56,7 +88,11 @@ public class Labyrinthe {
         return new int[]{x, y};
     }
 
-
+    /**
+     * methode deplacerPerso qui permet de deplacer le personnage en fonction de l'action jusqu'au prochain mur
+     * @param action action que doit effectuer le personnage
+     * @throws ActionInconnueException exception en cas d'action inconnue, les actions connues sont (haut,bas,gauche,droite
+     */
     public void deplacerPerso(String action) throws ActionInconnueException {
         int y = this.personnage.getPosition_Y();
         int x = this.personnage.getPosition_X();
@@ -74,7 +110,10 @@ public class Labyrinthe {
         }
     }
 
-
+    /**
+     * methode toString qui permet d'afficher un labyrinthe
+     * @return le labyrinthe sous forme de texte
+     */
     public String toString() {
         StringBuilder info = new StringBuilder();
 
@@ -90,11 +129,26 @@ public class Labyrinthe {
         return info.toString();
     }
 
-
+    /**
+     * methode etreFini qui retourne si oui ou non le labyrinthe est fini
+     * un labyrinthe est fini si le personnage est arrete sur la sortie
+     * @return si oui ou non le labyrinthe est fini
+     */
     public boolean etreFini() {
         return personnage.equals(sortie);
     }
 
+    /**
+     * methode chargerLabyrinthe qui permet de charger la labyrinthe grace a un fichier en parametre
+     * de remplir les attribut murs, personnages en sortie
+     * et de verifier si il n y a pas d erreur dans le fichier texte du labyrinthe
+     * (nb de lignes ou de colonnes qui ne correspond pas, plusieurs personnages ou sortie, si il y a un caractère inconnu,
+     * si il n y a pas de sortie ou si il n y a pas de personnage)
+     * @param nom le nom du fichier du labyrinthe a ouvrir
+     * @return le labyrinthe avec ces attributs complete
+     * @throws IOException erreur pendant la lecture du fichier
+     * @throws FichierIncorrectException erreur de colonnes, lignes, plusieurs personnages, sortie ou aucun personnage, aucune sortie
+     */
     public static Labyrinthe chargerLabyrinthe(String nom) throws IOException, FichierIncorrectException {
 
         BufferedReader buff = new BufferedReader(new FileReader(nom));
