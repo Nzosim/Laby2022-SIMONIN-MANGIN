@@ -99,10 +99,10 @@ class LabyrintheTest {
         }
 
         // Definition du labyrinthe
-        // Pour que avoir les x et y du labyrinthe
+        // toString nous donne le x et y du labyrinthe
         String[] labyrinthe = l.toString().split("\n");
 
-        // On verifie que le personnage est bien sur la sortie sans utiliser la methode getChar
+        // On verifie que le personnage est bien sur la sortie
         // donc toutes les autres lignes ne contienne que des '.'
 
         // On verifie la premiere ligne du labyrinthe
