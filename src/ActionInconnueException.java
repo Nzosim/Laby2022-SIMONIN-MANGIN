@@ -1,5 +1,3 @@
-import java.time.LocalDate;
-
 /**
  * public class ActionInconnueException
  * Exception lance lorsqu'une action effectue par le joueur est inconnue
@@ -26,6 +24,6 @@ public class ActionInconnueException extends Exception {
      */
     @Override
     public String getMessage() {
-        return "Action InconnueException : " + super.getMessage() + " " + LocalDate.now();
+        return "Action InconnueException : " + super.getMessage();
     }
 }
