@@ -154,8 +154,14 @@ public class Labyrinthe {
         BufferedReader buff = new BufferedReader(new FileReader(nom));
         Labyrinthe laby = new Labyrinthe();
 
-        int nx = Integer.parseInt(buff.readLine());
-        int ny = Integer.parseInt(buff.readLine());
+        int nx = 0, ny = 0;
+        try {
+            nx = Integer.parseInt(buff.readLine());
+            ny = Integer.parseInt(buff.readLine());
+        }catch (NumberFormatException e){
+            throw new FichierIncorrectException("Le caractère n'est pas un nombre, donc le fichier n'est pas correct");
+        }
+
         laby.murs = new boolean[nx][ny];
 
         boolean persoPlace = false, sortiePlace = false;
@@ -191,8 +197,8 @@ public class Labyrinthe {
             }
         }
 
-        if (!sortiePlace) throw new FichierIncorrectException("sortie inconnue");
-        if (!persoPlace) throw new FichierIncorrectException("personnage inconnue");
+        if (!sortiePlace) throw new FichierIncorrectException("Aucune sortie");
+        if (!persoPlace) throw new FichierIncorrectException("Aucun personnage");
 
         buff.close();
         return laby;
