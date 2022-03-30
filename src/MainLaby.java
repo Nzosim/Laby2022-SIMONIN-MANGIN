@@ -24,11 +24,15 @@ public class MainLaby {
             System.out.println("Le fichier n'existe pas");
             jeu = true;
         } catch (FichierIncorrectException e) {
-            System.out.println("Le labyrinthe du fichier n'est pas conforme");
+            System.out.println(e.getMessage());
             jeu = true;
         } catch (IOException e) {
             System.out.println(e.getMessage());
             jeu = true;
+        }
+        if (jeu) {
+            System.out.println("Le lancement n'a pas pu se faire");
+            System.exit(1);
         }
 
         Scanner sc = new Scanner(System.in);
