@@ -3,7 +3,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * class MainLaby
+ */
 public class MainLaby {
+    /**
+     * Main qui permet le fonctionnement du Jeu
+     * @param args
+     */
     public static void main(String[] args) {
         if (args.length != 1) {
             System.out.println("Entrer le nom du fichier");
