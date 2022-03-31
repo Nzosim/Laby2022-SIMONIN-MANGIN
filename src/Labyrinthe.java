@@ -39,9 +39,99 @@ public class Labyrinthe {
     public final static String DROITE = "droite";
 
     /**
+     * methode getChar qui retourne le type d'une case (mur, case vide, personnage, sortie)
+     * en fonction de ces coordonnee x et y
+     *
+     * @param x position en x
+     * @param y position en y
+     * @return type de la case
+     */
+    public char getChar(int x, int y) {
+        char res;
+
+        // On prend le caractere correspondant au type de la case
+        if (murs[x][y]) {
+            res = MUR;
+        } else if (personnage.equals(x, y)) {
+            res = PJ;
+        } else if (sortie.equals(x, y)) {
+            res = SORTIE;
+        } else {
+            res = VIDE;
+        }
+        return res;
+    }
+
+    /**
+     * methode deplacerPerso qui permet de deplacer le personnage en fonction de l'action jusqu'au prochain mur
+     *
+     * @param action action que doit effectuer le personnage
+     * @throws ActionInconnueException exception en cas d'action inconnue, les actions connues sont (haut,bas,gauche,droite
+     */
+    public void deplacerPerso(String action) throws ActionInconnueException {
+        int x = this.personnage.getPosition_X();
+        int y = this.personnage.getPosition_Y();
+
+        // On avance le personnage tant qu'il ne rencontre pas de mur
+        while (!this.murs[x][y]) {
+            int[] coord = getSuivant(x, y, action);
+            x = coord[0];
+            y = coord[1];
+
+            // Si la coordonnee suivante n'est pas un mur,
+            // On met a jour la position du personnage
+            if (!this.murs[x][y]) {
+                this.personnage.setPosition_Y(y);
+                this.personnage.setPosition_X(x);
+                y = this.personnage.getPosition_Y();
+                x = this.personnage.getPosition_X();
+            }
+        }
+    }
+
+    /**
+     * methode etreFini qui retourne si oui ou non le labyrinthe est fini
+     * un labyrinthe est fini si le personnage est arrete sur la sortie
+     *
+     * @return si oui ou non le labyrinthe est fini
+     */
+    public boolean etreFini() {
+        return personnage.equals(sortie);
+    }
+
+    /**
+     * methode toString qui permet d'afficher un labyrinthe
+     *
+     * @return le labyrinthe sous forme de texte
+     */
+    public String toString() {
+        // On utilise un StringBuilder pour eviter d'utiliser String
+        // Qui est plus lent pour la concatenation
+        StringBuilder info = new StringBuilder();
+
+        // Initialisation des variables de coordonnee
+        int largeur = this.murs[0].length;
+        int hauteur = this.murs.length;
+
+        // On parcours le labyrinthe et on ajoute les caracteres correspondant
+        for (int i = 0; i < hauteur; i++) {
+            for (int j = 0; j < largeur; j++) {
+                info.append(getChar(i, j));
+            }
+            // On ajoute un retour a la ligne a la fin de chaque ligne
+            info.append("\n");
+        }
+
+        // On retourne le labyrinthe sous forme de texte
+        return info.toString();
+    }
+
+
+    /**
      * methode getSuivant qui retourne la case suivante du personnage en fonction d'une action (haut,bas,gauche,droite)
-     * @param x position en x actuel du personnage
-     * @param y position en y actuel du personnage
+     *
+     * @param x      position en x actuel du personnage
+     * @param y      position en y actuel du personnage
      * @param action action que le personnage effectue
      * @return la position du personnage apres le deplacement
      * @throws ActionInconnueException exception en cas d'action inconnue, les actions connues sont (haut,bas,gauche,droite)
@@ -156,93 +246,7 @@ public class Labyrinthe {
         return laby;
     }
 
-    /**
-     * methode getChar qui retourne le type d'une case (mur, case vide, personnage, sortie)
-     * en fonction de ces coordonnee x et y
-     *
-     * @param x position en x
-     * @param y position en y
-     * @return type de la case
-     */
-    public char getChar(int x, int y) {
-        char res;
 
-        // On prend le caractere correspondant au type de la case
-        if (murs[x][y]) {
-            res = MUR;
-        } else if (personnage.equals(x, y)) {
-            res = PJ;
-        } else if (sortie.equals(x, y)) {
-            res = SORTIE;
-        } else {
-            res = VIDE;
-        }
-        return res;
-    }
-
-    /**
-     * methode deplacerPerso qui permet de deplacer le personnage en fonction de l'action jusqu'au prochain mur
-     *
-     * @param action action que doit effectuer le personnage
-     * @throws ActionInconnueException exception en cas d'action inconnue, les actions connues sont (haut,bas,gauche,droite
-     */
-    public void deplacerPerso(String action) throws ActionInconnueException {
-        int x = this.personnage.getPosition_X();
-        int y = this.personnage.getPosition_Y();
-
-        // On avance le personnage tant qu'il ne rencontre pas de mur
-        while (!this.murs[x][y]) {
-            int[] coord = getSuivant(x, y, action);
-            x = coord[0];
-            y = coord[1];
-
-            // Si la coordonnee suivante n'est pas un mur,
-            // On met a jour la position du personnage
-            if (!this.murs[x][y]) {
-                this.personnage.setPosition_Y(y);
-                this.personnage.setPosition_X(x);
-                y = this.personnage.getPosition_Y();
-                x = this.personnage.getPosition_X();
-            }
-        }
-    }
-
-    /**
-     * methode etreFini qui retourne si oui ou non le labyrinthe est fini
-     * un labyrinthe est fini si le personnage est arrete sur la sortie
-     *
-     * @return si oui ou non le labyrinthe est fini
-     */
-    public boolean etreFini() {
-        return personnage.equals(sortie);
-    }
-
-    /**
-     * methode toString qui permet d'afficher un labyrinthe
-     *
-     * @return le labyrinthe sous forme de texte
-     */
-    public String toString() {
-        // On utilise un StringBuilder pour eviter d'utiliser String
-        // Qui est plus lent pour la concatenation
-        StringBuilder info = new StringBuilder();
-
-        // Initialisation des variables de coordonnee
-        int largeur = this.murs[0].length;
-        int hauteur = this.murs.length;
-
-        // On parcours le labyrinthe et on ajoute les caracteres correspondant
-        for (int i = 0; i < hauteur; i++) {
-            for (int j = 0; j < largeur; j++) {
-                info.append(getChar(i, j));
-            }
-            // On ajoute un retour a la ligne a la fin de chaque ligne
-            info.append("\n");
-        }
-
-        // On retourne le labyrinthe sous forme de texte
-        return info.toString();
-    }
 
 
 }
