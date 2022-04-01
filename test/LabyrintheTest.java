@@ -89,6 +89,7 @@ class LabyrintheTest {
         // donc toutes les autres lignes ne contienne que des '.'
 
         // On verifie la premiere ligne du labyrinthe
+        assertEquals('P', l.getChar(1, 1), "Le personnage devrait etre en 1, 1");
         for (int i = 2; i < labyrinthe[1].length() - 1; i++) {
             assertEquals('.', l.getChar(1, i), "La case " + 1 + "," + i + " devrait etre vide");
         }
@@ -102,6 +103,39 @@ class LabyrintheTest {
 
         // On verifie que le personnage est bien sur la sortie
         assertTrue(l.etreFini(), "La partie devrait etre finie");
+    }
+
+    @Test
+    public void test_07_charge_OK() throws FichierIncorrectException, IOException, ActionInconnueException {
+        Labyrinthe l = Labyrinthe.chargerLabyrinthe("laby/laby0.txt");
+
+        // Definition du labyrinthe
+        // toString nous donne le x et y du labyrinthe
+        String[] labyrinthe = l.toString().split("\n");
+
+        // On verifie que le personnage est bien sur la sortie
+        // donc toutes les autres lignes ne contienne que des '.'
+
+        // On verifie la premiere ligne du labyrinthe
+        assertEquals('S', l.getChar(1, 1), "La sortie devrait etre en 1, 1");
+        for (int i = 2; i < labyrinthe[1].length() - 1; i++) {
+            assertEquals('.', l.getChar(1, i), "La case " + 1 + "," + i + " devrait etre vide");
+        }
+
+        // On verifie les autres lignes du labyrinthe
+        for (int i = 2; i < labyrinthe.length - 1; i++) {
+            for (int j = 1; j < labyrinthe[i].length() - 1; j++) {
+                if (i == 2 && j == 3) {
+                    assertEquals('P', l.getChar(i, j), "La case " + i + "," + j + " devrait etre un personnage");
+                } else {
+                    assertEquals('.', l.getChar(i, j), "La case " + i + "," + j + " devrait etre vide");
+
+                }
+            }
+        }
+
+        // On verifie que le personnage est bien sur la sortie
+        assertFalse(l.etreFini(), "La partie ne devrait pas etre finie");
     }
 
 }
