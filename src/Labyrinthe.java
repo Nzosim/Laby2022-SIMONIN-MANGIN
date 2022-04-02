@@ -142,7 +142,7 @@ public class Labyrinthe {
      * @throws ActionInconnueException exception en cas d'action inconnue, les actions connues sont (haut,bas,gauche,droite)
      */
     public static int[] getSuivant(int x, int y, String action) throws ActionInconnueException {
-        // On verifie que l'action est connue et que donne la position suivante du personnage
+        // On verifie que l'action est connue et donne la nouvelle position suivante du personnage
         switch (action) {
             case HAUT:
                 x--;
@@ -176,7 +176,7 @@ public class Labyrinthe {
      * @throws FichierIncorrectException erreur de colonnes, lignes, plusieurs personnages, sortie ou aucun personnage, aucune sortie
      */
     public static Labyrinthe chargerLabyrinthe(String nom) throws IOException, FichierIncorrectException {
-        // On ouvre le fichier
+        // On ouvre le fichier et initialise le labyrinthe
         BufferedReader buff = new BufferedReader(new FileReader(nom));
         Labyrinthe laby = new Labyrinthe();
 
