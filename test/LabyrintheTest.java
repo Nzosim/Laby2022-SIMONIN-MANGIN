@@ -106,7 +106,7 @@ class LabyrintheTest {
     }
 
     @Test
-    public void test_07_charge_OK() throws FichierIncorrectException, IOException, ActionInconnueException {
+    public void test_07_charge_OK() throws FichierIncorrectException, IOException {
         Labyrinthe l = Labyrinthe.chargerLabyrinthe("laby/laby0.txt");
 
         // Definition du labyrinthe
@@ -137,5 +137,4 @@ class LabyrintheTest {
         // On verifie que le personnage est bien sur la sortie
         assertFalse(l.etreFini(), "La partie ne devrait pas etre finie");
     }
-
 }
