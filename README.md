@@ -28,6 +28,9 @@
     2) lancer le programme grâce à la commande :
         java test/LabyrintheTest
 
+### - résulat de nos tests :
+    la totalités de nos tests fonctionne correctement
+
 ### — [nos tests :](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/test/LabyrintheTest.java)
     - tout nos tests sont effectues avec la labyrinthe de test : labyO.txt
 
@@ -44,3 +47,18 @@
         b/ tester la position du personnage après l'action bas depuis la position (2,5) qui doit maintenant être (4,5)
         c/ tester la position du personnage après l'action gauche depuis la position (4,5) qui doit maintenant être (3,4)
         d/ tester la position du personnage après l'action droite depuis la position (3,4) qui doit maintenant être (3,6)
+
+    3) test_03_getSuivant_Exception() permet de tester la méthode getSuivant() de la classe Labyrinthe 
+        a/ tester la position du personnage après un action inconnue depuis la position (3,5) qui ne doit pas changer
+
+    4) test_04_deplacerPerso_OK() permet de tester la méthode deplacerPerso() de la classe Labyrinthe
+        cette méthode permet de déplacer le personnage dans la direction indiquée jusqu'à rencontrer un mur
+        a/ tester si le personnage est bien placé à la position (1,3) après avoir effectué une action haut et que son ancienne case (2,3) est bien vide
+        b/ tester si le personnage est bien placé à la position (1,5) après avoir effectué une action droite et que son ancienne case (1,3) est bien vide
+        c/ tester si le personnage est bien placé à la position (3,5) après avoir effectué une action bas et que son ancienne case (1,5) est bien vide
+        d/ tester si le personnage est bien placé à la position (3,1) après avoir effectué une action gauche et que son ancienne case (3,5) est bien vide
+
+    5) test_05_etreFini_OK() permet de tester la méthode etreFini() de la classe Labyrinthe
+        cette méthode permet de savoir si le personnage est arrivé à la sortie
+        a/ tester si le personnage est arrivé à la sortie après avoir effectué l'action haut et gauche
+
