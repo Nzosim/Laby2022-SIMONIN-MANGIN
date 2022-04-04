@@ -19,6 +19,28 @@
     4) lancer le programme grâce à la commande :
         java src/MainLaby.java
 
+### — [comment lancer nos tests :](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/test/LabyrintheTest.java)
+    - il faut avoir effectué les étapes 1 et 2 grâce à l'étape précédente 
+    
+    1) dans le terminal, tapez la commande :
+        javac test/LabyrintheTest.java
+
+    2) lancer le programme grâce à la commande :
+        java test/LabyrintheTest
+
 ### — [nos tests :](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/test/LabyrintheTest.java)
- 
-— une pr´esentation de votre couverture de test et des explications associ´ees.
+    - tout nos tests sont effectues avec la labyrinthe de test : labyO.txt
+
+    1) test_01_getChar_OK permet de tester la méthode getChar() de la classe Labyrinthe
+        cette méthode retourne la caractère présent à la position (x,y) dans le labyrinthe
+        a/ tester si la position au coordonnées (0,0) contient bien le caractère 'X' qui est un mur
+        b/ tester si la position au coordonnées (1,1) contient bien le caractère 'S' qui est la sortie
+        c/ tester si la position au coordonnées (1,2) contient bien le caractère '.' qui est une case vide
+        d/ tester si la position au coordonnées (2,3) contient bien le caractère 'P' qui est le personnage
+
+    2) test_02_getSuivant_OK permet de tester la méthode getSuivant() de la classe Labyrinthe
+        cette méthode retourne la position du personnage après avoir effectué une action
+        a/ tester la position du personnage après l'action haut depuis la position (3,5) qui doit maintenant être (2,5)
+        b/ tester la position du personnage après l'action bas depuis la position (2,5) qui doit maintenant être (4,5)
+        c/ tester la position du personnage après l'action gauche depuis la position (4,5) qui doit maintenant être (3,4)
+        d/ tester la position du personnage après l'action droite depuis la position (3,4) qui doit maintenant être (3,6)
