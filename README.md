@@ -19,6 +19,6 @@
     4) lancer le programme grâce à la commande :
         java src/MainLaby.java
 
-
-— un r´esum´e des r´esultats de vos tests (ce qui r´eussit / ´echoue ´eventuellement) ;
+### — [nos tests :](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/test/LabyrintheTest.java)
+ 
 — une pr´esentation de votre couverture de test et des explications associ´ees.
