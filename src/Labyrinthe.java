@@ -180,7 +180,8 @@ public class Labyrinthe {
         BufferedReader buff = new BufferedReader(new FileReader(nom));
         Labyrinthe laby = new Labyrinthe();
 
-        int nx = 0, ny = 0;
+        int nx;
+        int ny;
         try {
             nx = Integer.parseInt(buff.readLine());
             ny = Integer.parseInt(buff.readLine());
