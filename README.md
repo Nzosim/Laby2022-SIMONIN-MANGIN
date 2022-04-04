@@ -62,3 +62,8 @@
         cette méthode permet de savoir si le personnage est arrivé à la sortie
         a/ tester si le personnage est arrivé à la sortie après avoir effectué l'action haut et gauche
 
+    6) test_06_etreFini_avance() permet de tester la méthode etreFini() de la classe Labyrinthe
+        cette méthode permet de savoir si le personnage est arrivé à la sortie
+        ce test reprend le test précédent mais en vérifiant la place de chaque cas après avoir effectué une action
+
+
