@@ -1,6 +1,5 @@
 /**
- * public class FichierIncorrectException
- * Exception lance lorsqu'il y a une erreur dans un fichier du labyrinthe
+ * Classe FichierIncorrectException
  */
 public class FichierIncorrectException extends Exception {
     /**

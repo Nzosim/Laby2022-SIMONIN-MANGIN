@@ -1,6 +1,5 @@
 /**
- * public class ActionInconnueException
- * Exception lance lorsqu'une action effectue par le joueur est inconnue
+ * Classe ActionInconnueException
  */
 public class ActionInconnueException extends Exception {
     /**
