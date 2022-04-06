@@ -227,7 +227,7 @@ public class Labyrinthe {
                 break;
             default:
                 // On lance une exception si l'action n'est pas connue
-                throw new ActionInconnueException("Action inconnue");
+                throw new ActionInconnueException(action);
 
         }
         return new int[]{x, y};
