@@ -268,7 +268,8 @@ class LabyrintheTest {
     }
 
     /**
-     *
+     * test numero 12 qui test si la methode charge leve une exception lorsque les lignes du debut du fichier labyrinthe lu
+     * qui correspondent au nombre de lignes et de colonnes est invalide
      * @throws IOException
      */
     @Test
@@ -282,6 +283,10 @@ class LabyrintheTest {
         }
     }
 
+    /**
+     * test numero 13 qui test si la methode charge leve une exception lorsqu une ligne est plus grande que la valeur inscrite en debut de fichier
+     * @throws IOException
+     */
     @Test
     public void test_13_charge_ligne_en_trop() throws IOException {
         // verification
@@ -293,6 +298,10 @@ class LabyrintheTest {
         }
     }
 
+    /**
+     * test numero 14 qui test si la methode charge leve une exception lorsqu une ligne est plus petite que la valeur inscrite en debut de fichier
+     * @throws IOException
+     */
     @Test
     public void test_14_charge_ligne_en_moins() throws IOException {
         // verification
@@ -304,7 +313,10 @@ class LabyrintheTest {
         }
     }
 
-
+    /**
+     * test numero 15 qui test si la methode charge leve une exception lorsque le nombre de colonne est plus grand ou plus petit que la valeur inscrite en debut de fichier
+     * @throws IOException
+     */
     @Test
     public void test_15_charge_colonne_incorrect() throws IOException {
         // verification
@@ -316,6 +328,10 @@ class LabyrintheTest {
         }
     }
 
+    /**
+     * test numero 16 qui test la methode charge lorsque le labyrinthe contient un caractère autre que '.', 'X', 'S' ou 'P'
+     * @throws IOException
+     */
     @Test
     public void test_16_charge_caractere_inconnu() throws IOException{
         // verification
