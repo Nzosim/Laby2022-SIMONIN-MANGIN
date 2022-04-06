@@ -177,53 +177,54 @@ class LabyrintheTest {
     public void test_08_charge_2_personnages() throws IOException {
         // verification
         assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_deuxPersonnage.txt"));
-        boolean exception = false;
         try{
             Labyrinthe.chargerLabyrinthe("laby/laby_deuxPersonnage.txt");
         }catch(FichierIncorrectException e){
-            if(e.getMessage().equals("FichierIncorrectException : plusieurs personnages")) exception = true;
+            assertEquals(e.getMessage(), "FichierIncorrectException : plusieurs personnages", "L'exception plusieurs personnages devrait etre levée");
         }
-        assertTrue(exception, "L'exception plusieurs personnages devrait etre levée");
     }
 
     @Test
     public void test_09_charge_0_personnages() throws IOException {
         // verification
         assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_SansPersonnage.txt"));
-        boolean exception = false;
         try{
             Labyrinthe.chargerLabyrinthe("laby/laby_SansPersonnage.txt");
         }catch(FichierIncorrectException e){
-            if(e.getMessage().equals("FichierIncorrectException : Aucun personnage")) exception = true;
-            System.out.println(e.getMessage());
+            assertEquals(e.getMessage(), "FichierIncorrectException : Aucun personnage", "L'exception aucun personnages devrait etre levée");
         }
-        assertTrue(exception, "L'exception aucun personnages devrait etre levée");
     }
 
     @Test
     public void test_10_charge_2_sorties() throws IOException {
         // verification
         assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_deuxSortie.txt"));
-        boolean exception = false;
         try{
             Labyrinthe.chargerLabyrinthe("laby/laby_deuxSortie.txt");
         }catch(FichierIncorrectException e){
-            if(e.getMessage().equals("FichierIncorrectException : plusieurs sorties")) exception = true;
+            assertEquals(e.getMessage(), "FichierIncorrectException : plusieurs sorties","L'exception plusieurs sorties devrait etre levée");
         }
-        assertTrue(exception, "L'exception plusieurs sorties devrait etre levée");
     }
 
     @Test
     public void test_11_charge_0_sorties() throws IOException {
         // verification
         assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_pasSortie.txt"));
-        boolean exception = false;
         try{
             Labyrinthe.chargerLabyrinthe("laby/laby_pasSortie.txt");
         }catch(FichierIncorrectException e){
-            if(e.getMessage().equals("FichierIncorrectException : Aucune sortie")) exception = true;
-            System.out.println(e.getMessage());
+            assertEquals(e.getMessage(), "FichierIncorrectException : Aucune sortie", "L'exception aucune sortie devrait etre levée");
         }
-        assertTrue(exception, "L'exception aucune sortie devrait etre levée");
+    }
+
+    @Test
+    public void test_12_charge_valeur_nb_lignes_invalide() throws IOException {
+        // verification
+        assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_2PremieresValeurNaN.txt"));
+        try{
+            Labyrinthe.chargerLabyrinthe("laby/laby_2PremieresValeurNaN.txt");
+        }catch(FichierIncorrectException e) {
+            assertEquals(e.getMessage(), "FichierIncorrectException : Le caractère n'est pas un nombre, donc le fichier n'est pas correct", "L'exception caractère non nombre devrait etre levée");
+        }
     }
 }
