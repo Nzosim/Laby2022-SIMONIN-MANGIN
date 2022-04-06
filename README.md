@@ -43,7 +43,7 @@
 ### — Résulat de nos tests :
 
 > Nous avons abordé l'ensemble des tests possible en passant du test basique de méthode jusqu'aux tests
-> d'exception nous avons au total : **16** tests qui sont tous validés.
+> d'exception nous avons au total : **17** tests qui sont tous validés.
 
 ### — Nos tests : [LabyrintheTest.java](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/test/LabyrintheTest.java)
 
@@ -55,7 +55,7 @@ créé voici les deux fichiers exceptions que nous avons créé :
 , [FichierIncorrectException.java](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/src/FichierIncorrectException.java)
 
 1) [test_01_getChar_OK](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/3f00e3bf66a7323d98c4d7fc196a94f81960c960/test/LabyrintheTest.java#L15)
-   permet de tester la méthode `getChar()` de la classe Labyrinthe cette méthode retourne la caractère présent à la
+   permet de tester la méthode `getChar()` de la classe Labyrinthe cette méthode retourne le caractère présent à la
    position (x,y) dans le labyrinthe
     - **a)** tester si la position au coordonnées (0,0) contient bien le caractère 'X' qui est un **mur**
     - **b)** tester si la position au coordonnées (1,1) contient bien le caractère 'S' qui est la **sortie**
@@ -99,12 +99,12 @@ créé voici les deux fichiers exceptions que nous avons créé :
 
 6) [test_06_etreFini_avance](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/3f00e3bf66a7323d98c4d7fc196a94f81960c960/test/LabyrintheTest.java#L143)
    permet de tester la méthode `etreFini()` de la classe Labyrinthe cette méthode permet de savoir si le personnage est
-   arrivé à la sortie ce test reprend le test précédent mais en vérifiant la place de chaque cas après avoir effectué
+   arrivé à la sortie ce test reprend le test précédent, mais en vérifiant la place de chaque cas après avoir effectué
    une action
 
 7) [test_07_charge_OK](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/3f00e3bf66a7323d98c4d7fc196a94f81960c960/test/LabyrintheTest.java#L181)
    permet de tester la méthode `chargerLabyrinthe()` de la classe Labyrinthe cette méthode permet de tester si la
-   méthode chargerLabyrinthe fonctionne correctement avec la labyrinthe laby0.txt
+   méthode chargerLabyrinthe fonctionne correctement avec le labyrinthe laby0.txt
 
 Utilisation du
 fichier [laby_deuxPersonnage.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_deuxPersonnage.txt)
@@ -136,7 +136,7 @@ fichier [laby_SansSortie.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/
 
 11) [test_11_charge_0_sorties](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/3f00e3bf66a7323d98c4d7fc196a94f81960c960/test/LabyrintheTest.java#L265)
     permet de tester la méthode `chargerLabyrinthe()` de la classe Labyrinthe cette méthode permet de tester si la
-    méthode chargerLabyrinthe lève bien une exception de type `FichierIncorrectException` si le labyrinthe contient
+    méthode chargerLabyrinthe lève bien une exception de type `FichierIncorrectException` si le labyrinthe ne contient
     aucune sortie, mais aussi de verifier que le message d'erreur est correct ici le message d'erreur est :
     `"FichierIncorrectException : Aucune sortie"`
 
@@ -155,7 +155,7 @@ fichier [laby_ligneEnPlus.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN
 13) [test_13_charge_ligne_en_trop](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/3f00e3bf66a7323d98c4d7fc196a94f81960c960/test/LabyrintheTest.java#L296)
     permet de tester la méthode `chargerLabyrinthe()` de la classe Labyrinthe cette méthode permet de tester si la
     méthode chargerLabyrinthe lève bien une exception de type `FichierIncorrectException` si le fichier du labyrinthe ne
-    contient pas le nombre de lignes indiqués dans la premières ligne du fichier, qu'il contienne **plus** de ligne
+    contient pas le nombre de lignes indiqué dans la première ligne du fichier, qu'il contienne **plus** de ligne
     qu'indiqué ici le message d'erreur est :
     `"FichierIncorrectException : Le nombre de ligne ne correspond pas"`
 
@@ -165,7 +165,7 @@ fichier [laby_ligneEnMoins.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGI
 14) [test_14_charge_ligne_en_moins](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/3f00e3bf66a7323d98c4d7fc196a94f81960c960/test/LabyrintheTest.java#L311)
     permet de tester la méthode `chargerLabyrinthe()` de la classe Labyrinthe cette méthode permet de tester si la
     méthode chargerLabyrinthe lève bien une exception de type `FichierIncorrectException` si le fichier du labyrinthe ne
-    contient pas le nombre de lignes indiqués dans la premières ligne du fichier, qu'il contienne **moins** de ligne
+    contient pas le nombre de lignes indiqué dans la première ligne du fichier, qu'il contienne **moins** de ligne
     qu'indiqué ici le message d'erreur est :
     `"FichierIncorrectException : Le nombre de ligne ne correspond pas"`
 
