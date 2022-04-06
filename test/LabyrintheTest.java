@@ -221,10 +221,32 @@ class LabyrintheTest {
     public void test_12_charge_valeur_nb_lignes_invalide() throws IOException {
         // verification
         assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_2PremieresValeurNaN.txt"));
-        try{
+        try {
             Labyrinthe.chargerLabyrinthe("laby/laby_2PremieresValeurNaN.txt");
-        }catch(FichierIncorrectException e) {
+        } catch (FichierIncorrectException e) {
             assertEquals(e.getMessage(), "FichierIncorrectException : Le caractère n'est pas un nombre, donc le fichier n'est pas correct", "L'exception caractère non nombre devrait etre levée");
+        }
+    }
+
+    @Test
+    public void test_13_charge_nombre_de_ligne_en_trop() throws IOException {
+        // verification
+        assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_ligneEnPlus.txt"));
+        try {
+            Labyrinthe.chargerLabyrinthe("laby/laby_ligneEnPlus.txt");
+        } catch (FichierIncorrectException e) {
+            assertEquals(e.getMessage(), "FichierIncorrectException : Le nombre de ligne ne correspond pas", "L'exception FichierIncorectException : Le nombre de ligne ne correspond pas devrait etre levée devrait être levée");
+        }
+    }
+
+    @Test
+    public void test_14_charge_nombre_de_ligne_en_moins() throws IOException {
+        // verification
+        assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_ligneEnMoins.txt"));
+        try {
+            Labyrinthe.chargerLabyrinthe("laby/laby_ligneEnMoins.txt");
+        } catch (FichierIncorrectException e) {
+            assertEquals(e.getMessage(), "FichierIncorrectException : Le nombre de ligne ne correspond pas", "L'exception FichierIncorectException : Le nombre de ligne ne correspond pas devrait etre levée devrait être levée");
         }
     }
 }

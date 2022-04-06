@@ -1,5 +1,4 @@
 import java.io.BufferedReader;
-import java.io.EOFException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -203,10 +202,10 @@ public class Labyrinthe {
         // On parcours le fichier
         for (int x = 0; x < nx; x++) {
             // On lit une ligne du fichier
-            try {
-                ligne = buff.readLine();
-            } catch (EOFException e) {
-                // On lance une exception si le fichier n'est pas au bon format
+
+            ligne = buff.readLine();
+            if (ligne == null) {
+                // On lance une exception si le fichier a une ou plusieurs lignes en moins que le nombre de lignes du labyrinthe
                 throw new FichierIncorrectException("Le nombre de ligne ne correspond pas");
             }
 
@@ -246,6 +245,10 @@ public class Labyrinthe {
                 }
             }
         }
+
+        // On regarde qu'il n'y a plus aucune ligne
+        ligne = buff.readLine();
+        if (ligne != null) throw new FichierIncorrectException("Le nombre de ligne ne correspond pas");
 
         // On verifier que le fichier contient bien une sortie et un personnage
         if (!sortiePlace) throw new FichierIncorrectException("Aucune sortie");
