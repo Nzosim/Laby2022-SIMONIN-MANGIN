@@ -1,9 +1,10 @@
 /**
- * class Sortie qui etend de la class Position
+ * Classe Sortie
  */
 public class Sortie extends Position {
     /**
-     * constructeur du Sortie qui initialise ses coordonnees en x et y
+     * constructeur Sortie qui initialise ses coordonnees en x et y
+     *
      * @param position_X position en x
      * @param position_Y position en y
      */

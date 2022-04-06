@@ -1,5 +1,5 @@
 /**
- * class Personnage qui etend de la classe Position
+ * Classe Personnage
  */
 public class Personnage extends Position {
     /**

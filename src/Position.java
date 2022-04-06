@@ -1,5 +1,5 @@
 /**
- * class Position
+ * Classe Position
  */
 public class Position {
 
@@ -12,9 +12,10 @@ public class Position {
     private int position_Y;
 
     /**
-     * constructeur de la classe Position qui initialise la position en X et en Y
-     * @param position_X la position en X
-     * @param position_Y la position en Y
+     * constructeur de la classe Position qui initialise la position en x et en y
+     *
+     * @param position_X la position en x
+     * @param position_Y la position en y
      */
     public Position(int position_X, int position_Y) {
         this.position_X = position_X;
@@ -39,7 +40,7 @@ public class Position {
 
     /**
      * methode setPosition_X qui modifie la position en X
-     * @param position_X la position a assigne en X
+     * @param position_X La nouvelle position de x
      */
     public void setPosition_X(int position_X) {
         this.position_X = position_X;
@@ -47,14 +48,14 @@ public class Position {
 
     /**
      * methode setPosition_Y qui modifie la position en Y
-     * @param position_Y la position a assigne en Y
+     * @param position_Y La nouvelle position de y
      */
     public void setPosition_Y(int position_Y) {
         this.position_Y = position_Y;
     }
 
     /**
-     * methode equals qui verifie si la position d un objet Position est en position x et y donne en parametre
+     * methode equals qui verifie si la position est egal ou non
      * @param x position en x
      * @param y position en y
      * @return si oui ou non les positions sont les memes
@@ -64,7 +65,7 @@ public class Position {
     }
 
     /**
-     * methode equals qui verifie si la position d un objet Position est la meme qu un autre objet
+     * methode equals qui verifie si la position est egal à une autre Objet Position
      * @param p position a tester
      * @return si oui ou non les positions sont les memes
      */
