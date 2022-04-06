@@ -167,4 +167,58 @@ class LabyrintheTest {
         // On verifie que le personnage est bien sur la sortie
         assertFalse(l.etreFini(), "La partie ne devrait pas etre finie");
     }
+
+    @Test
+    public void test_08_charge_2_personnages() throws IOException {
+        // verification
+        assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_deuxPersonnage.txt"));
+        boolean exception = false;
+        try{
+            Labyrinthe.chargerLabyrinthe("laby/laby_deuxPersonnage.txt");
+        }catch(FichierIncorrectException e){
+            if(e.getMessage().equals("FichierIncorrectException : plusieurs personnages")) exception = true;
+        }
+        assertTrue(exception, "L'exception plusieurs personnages devrait etre levée");
+    }
+
+    @Test
+    public void test_09_charge_0_personnages() throws IOException {
+        // verification
+        assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_SansPersonnage.txt"));
+        boolean exception = false;
+        try{
+            Labyrinthe.chargerLabyrinthe("laby/laby_SansPersonnage.txt");
+        }catch(FichierIncorrectException e){
+            if(e.getMessage().equals("FichierIncorrectException : Aucun personnage")) exception = true;
+            System.out.println(e.getMessage());
+        }
+        assertTrue(exception, "L'exception aucun personnages devrait etre levée");
+    }
+
+    @Test
+    public void test_10_charge_2_sorties() throws IOException {
+        // verification
+        assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_deuxSortie.txt"));
+        boolean exception = false;
+        try{
+            Labyrinthe.chargerLabyrinthe("laby/laby_deuxSortie.txt");
+        }catch(FichierIncorrectException e){
+            if(e.getMessage().equals("FichierIncorrectException : plusieurs sorties")) exception = true;
+        }
+        assertTrue(exception, "L'exception plusieurs sorties devrait etre levée");
+    }
+
+    @Test
+    public void test_11_charge_0_sorties() throws IOException {
+        // verification
+        assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_pasSortie.txt"));
+        boolean exception = false;
+        try{
+            Labyrinthe.chargerLabyrinthe("laby/laby_pasSortie.txt");
+        }catch(FichierIncorrectException e){
+            if(e.getMessage().equals("FichierIncorrectException : Aucune sortie")) exception = true;
+            System.out.println(e.getMessage());
+        }
+        assertTrue(exception, "L'exception aucune sortie devrait etre levée");
+    }
 }
