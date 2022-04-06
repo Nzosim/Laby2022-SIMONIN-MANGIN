@@ -11,18 +11,11 @@ public class ActionInconnueException extends Exception {
     }
 
     /**
-     * constructeur vide de la classe ActionInconnueException
-     */
-    public ActionInconnueException() {
-        super();
-    }
-
-    /**
      * methode getMessage de la classe ActionInconnueException
      * @return le message de d'erreur
      */
     @Override
     public String getMessage() {
-        return "Action InconnueException : " + super.getMessage();
+        return "ActionInconnueException : " + super.getMessage();
     }
 }

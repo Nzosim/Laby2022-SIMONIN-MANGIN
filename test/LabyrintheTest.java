@@ -65,6 +65,11 @@ class LabyrintheTest {
 
         // verifications
         assertThrows(ActionInconnueException.class, () -> Labyrinthe.getSuivant(x, y, "boo"));
+        try {
+            Labyrinthe.getSuivant(x, y, "boo");
+        } catch (ActionInconnueException e) {
+            assertEquals("ActionInconnueException : boo", e.getMessage(), "Action InconnueException : boo");
+        }
     }
 
     /**
