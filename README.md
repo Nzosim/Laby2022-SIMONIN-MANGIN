@@ -7,7 +7,7 @@
 
 ### Nos choix de programmation :
    > Nous avons choisi de ne pas faire de constructeur dans la classe Labyrinthe, grâce à notre méthode chargerLabyrinthe
-   > qui est une méthode static et peux donc être utilisé sans objet. Cela nous permet donc d'initialiser totalement un labyrinthe seulement
+   > qui est une méthode static et peut donc être utilisé sans objet. Cela nous permet donc d'initialiser totalement un labyrinthe seulement
    > avec la méthode chargerLabyrinthe
 
 ### - comment télécharger et lancer le labyrinthe :
