@@ -66,4 +66,32 @@
         cette méthode permet de savoir si le personnage est arrivé à la sortie
         ce test reprend le test précédent mais en vérifiant la place de chaque cas après avoir effectué une action
 
+    7) test_07_charge_OK permet de tester la méthode chargerLabyrinthe() de la classe Labyrinthe
+        cette méthode permet de tester si la méthode chargerLabyrinthe fonctionne correctement avec la labyrinthe laby0.txt
 
+    8) test_08_charge_2_personnages permet de tester la méthode chargerLabyrinthe() de la classe Labyrinthe
+        cette méthode permet de tester si la méthode chargerLabyrinthe lève une exception de type FichierIncorrectException si le labyrinthe contient plusieurs personnages
+
+    9) test_09_charge_0_personnages permet de tester la méthode chargerLabyrinthe() de la classe Labyrinthe
+        cette méthode permet de tester si la méthode chargerLabyrinthe lève une exception de type FichierIncorrectException si le labyrinthe contient aucun personnage
+
+    10) test_10_charge_2_sorties permet de tester la méthode chargerLabyrinthe() de la classe Labyrinthe
+        cette méthode permet de tester si la méthode chargerLabyrinthe lève une exception de type FichierIncorrectException si le labyrinthe contient plusieurs sorties
+
+    11) test_11_charge_0_sorties permet de tester la méthode chargerLabyrinthe() de la classe Labyrinthe
+        cette méthode permet de tester si la méthode chargerLabyrinthe lève une exception de type FichierIncorrectException si le labyrinthe contient aucune sortie
+    
+    12) test_12_charge_valeur_nb_lignes_invalide permet de tester la méthode chargerLabyrinthe() de la classe Labyrinthe
+        cette méthode permet de tester si la méthode chargerLabyrinthe lève une exception de type FichierIncorrectException si le fichier du labyrinthe ne contient pas le nombre de lignes et de colonnes dans les 2 premières lignes de son fichier
+    
+    13) test_13_charge_ligne_en_trop permet de tester la méthode chargerLabyrinthe() de la classe Labyrinthe
+        cette méthode permet de tester si la méthode chargerLabyrinthe lève une exception de type FichierIncorrectException si le fichier du labyrinthe ne contient pas le nombre de lignes indiqués dans la premières ligne du fichier, qu'il contienne plus de ligne qu'indiqué
+
+    14) test_14_charge_ligne_en_moins permet de tester la méthode chargerLabyrinth() de la classe Labyrinthe
+        cette méthode permet de tester si la méthode chargerLabyrinthe lève une exception de type FichierIncorrectException si le fichier du labyrinthe ne contient pas le nombre de lignes indiqués dans la premières ligne du fichier, qu'il contienne moins de ligne qu'indiqué
+
+    15) test_15_charge_colonne_incorrect permet de tester la méthode chargerLabyrinth() de la classe Labyrinthe
+        cette méthode permet de tester si la méthode chargerLabyrinthe lève une exception de type FichierIncorrectException si le fichier du labyrinthe ne contient pas le bon nombre de caractères par colonnes
+    
+    16) test_16_charge_caractere_inconnu permet de tester la méthode chargerLabyrinth() de la classe Labyrinthe
+        cette méthode permet de tester si la méthode chargerLabyrinthe lève une exception de type FichierIncorrectException si un caractère du labyrinthe est inconnue
