@@ -5,9 +5,10 @@
    > nous avons compris que les coordonnées y et x était inversé donc nous avons du tout remettre dans le bon ordre, 
    > ce qui a été assez long de compréhension.
 
-### - nos choix de programmation :
-
-    idk
+### Nos choix de programmation :
+   > Nous avons choisi de ne pas faire de constructeur dans la classe Labyrinthe, grâce à notre méthode chargerLabyrinthe
+   > qui est une méthode static et peux donc être utilisé sans objet. Cela nous permet donc d'initialiser totalement un labyrinthe seulement
+   > avec la méthode chargerLabyrinthe
 
 ### - comment télécharger et lancer le labyrinthe :
 
