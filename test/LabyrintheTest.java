@@ -333,7 +333,7 @@ class LabyrintheTest {
      * @throws IOException
      */
     @Test
-    public void test_16_charge_caractere_inconnu() throws IOException{
+    public void test_16_charge_caractere_inconnu() throws IOException {
         // verification
         assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_caractereInconnu.txt"));
         try {
@@ -341,5 +341,24 @@ class LabyrintheTest {
         } catch (FichierIncorrectException e) {
             assertEquals(e.getMessage(), "FichierIncorrectException : caractere inconnu E", "L'exception FichierIncorectException : Caractere inconnu  devrait être levée");
         }
+    }
+
+    /**
+     * test numero 17 qui test la methode deplacerPerso lorsque le personnage rencontre une sortie
+     *
+     * @throws IOException
+     * @throws FichierIncorrectException
+     * @throws ActionInconnueException
+     */
+    public void test_17_deplacerPerso_rencontre_sortie() throws IOException, FichierIncorrectException, ActionInconnueException {
+        // preparation des donnees
+        Labyrinthe laby = Labyrinthe.chargerLabyrinthe("laby/laby_2.txt");
+
+        // methode a tester
+        laby.deplacerPerso("haut");
+
+        // verification
+        assertEquals(laby.getChar(4, 17), 'P', "La position du perso devrait etre (4,17)");
+        assertTrue(laby.etreFini(), "Le labyrinthe devrait etre fini");
     }
 }
