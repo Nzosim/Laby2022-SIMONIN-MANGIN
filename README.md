@@ -1,6 +1,6 @@
 ## SIMONIN ENZO  ///  MANGIN FLORIAN
 
-### Difficultés rencontrées au cours du TP :
+Difficultés rencontrées au cours du TP :
 
     > La principale difficultés ont été rencontré sur la comprenhension de l'énoncé, 
     > nous avons compris que les coordonnées y et x était inversé donc nous avons dù tout remettre
