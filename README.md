@@ -3,7 +3,7 @@
 
 > La principale difficulté que nous avons rencontré sur la compréhension de l'énoncé,
 > nous avons compris que les coordonnées y et x était inversé donc nous avons du tout remettre dans le bon ordre,
-> ce qui a été assez long de compréhension.
+> ce qui a été assez long, mais aussi long de compréhension.
 
 ### Nos choix de programmation :
 
@@ -11,7 +11,7 @@
 > qui est une méthode static et on peut donc être utilisé sans objet. Cela nous permet donc d'initialiser totalement un labyrinthe seulement
 > avec la méthode chargerLabyrinthe
 >
-> Durant la conception des nous avons choisi de créer de nouveaux fichiers de labyrinthe, et aisi tester toutes les possiblités d'erreurs
+> Durant la conception nous avons choisi de créer de nouveaux fichiers de labyrinthe, et ainsi tester toutes les possiblités d'erreurs
 > lorsque l'on charge un labyrinthe
 
 ### — Comment télécharger et lancer le labyrinthe :
