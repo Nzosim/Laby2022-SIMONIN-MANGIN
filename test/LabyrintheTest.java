@@ -47,6 +47,11 @@ class LabyrintheTest {
         // preparation des donnees
         int x = 3;
         int y = 5;
+
+        // methode a tester
+        // getSuivant
+
+        // verifications
         assertThrows(ActionInconnueException.class, () -> Labyrinthe.getSuivant(x, y, "boo"));
     }
 
