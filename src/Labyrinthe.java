@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.EOFException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -202,12 +203,17 @@ public class Labyrinthe {
         // On parcours le fichier
         for (int x = 0; x < nx; x++) {
             // On lit une ligne du fichier
-            ligne = buff.readLine();
+            try {
+                ligne = buff.readLine();
+            } catch (EOFException e) {
+                // On lance une exception si le fichier n'est pas au bon format
+                throw new FichierIncorrectException("Le nombre de ligne ne correspond pas");
+            }
 
             // On verifie que la ligne est de la bonne taille
             // Sinon on lance une exception FinFichierIncorrectException
             // Avec le message correspondant nbLignes ne correspond pas
-            if (ligne.length() > ny) throw new FichierIncorrectException("nbLignes ne correspond pas");
+            if (ligne.length() > ny) throw new FichierIncorrectException("Le nombre de colonne correspond pas");
 
             // On parcours la ligne
             for (int y = 0; y < ny; y++) {
