@@ -6,6 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LabyrintheTest {
 
+    /**
+     * test numero 1 qui test si la methode getChar fonctionne correctement
+     * @throws FichierIncorrectException
+     * @throws IOException
+     */
     @Test
     public void test_01_getChar_OK() throws FichierIncorrectException, IOException {
         // preparation des donnees
@@ -18,6 +23,10 @@ class LabyrintheTest {
         assertEquals('P', l.getChar(2, 3), "Cela devrait etre le personnage");
     }
 
+    /**
+     * test numero 2 qui test si la methode getSuivant fonctionne correctement
+     * @throws ActionInconnueException
+     */
     @Test
     public void test_02_getSuivant_OK() throws ActionInconnueException {
         // preparation des donnees
@@ -42,6 +51,9 @@ class LabyrintheTest {
         assertEquals(6, droite[1], "Cela devrait etre a 6");
     }
 
+    /**
+     * test numero 3 qui test si la methode getSuivant leve une exception si l'action est inconnue
+     */
     @Test
     public void test_03_getSuivant_Exception() {
         // preparation des donnees
@@ -55,6 +67,12 @@ class LabyrintheTest {
         assertThrows(ActionInconnueException.class, () -> Labyrinthe.getSuivant(x, y, "boo"));
     }
 
+    /**
+     * test numero 4 qui test si la methode deplacerPerso fonctionne correctement
+     * @throws FichierIncorrectException
+     * @throws IOException
+     * @throws ActionInconnueException
+     */
     @Test
     public void test_04_deplacerPerso_OK() throws FichierIncorrectException, IOException, ActionInconnueException {
         // preparation des donnees
@@ -90,7 +108,12 @@ class LabyrintheTest {
 
     }
 
-
+    /**
+     * test numero 5 qui test si la methode etreFini leve une exception si l'action est inconnue
+     * @throws FichierIncorrectException
+     * @throws IOException
+     * @throws ActionInconnueException
+     */
     @Test
     public void test_05_etreFini_OK() throws FichierIncorrectException, IOException, ActionInconnueException {
         // preparation des donnees
@@ -105,6 +128,12 @@ class LabyrintheTest {
         assertTrue(l.etreFini(), "La partie devrait etre finie");
     }
 
+    /**
+     * test numero 6 qui test si la methode etreFini de maniere plus developpe
+     * @throws FichierIncorrectException
+     * @throws IOException
+     * @throws ActionInconnueException
+     */
     @Test
     public void test_06_etreFini_avance() throws FichierIncorrectException, IOException, ActionInconnueException {
         // preparation des donnees
@@ -138,6 +167,11 @@ class LabyrintheTest {
         assertTrue(l.etreFini(), "La partie devrait etre finie");
     }
 
+    /**
+     * test numero 7 qui test si la methode charge fonctionne correctement
+     * @throws FichierIncorrectException
+     * @throws IOException
+     */
     @Test
     public void test_07_charge_OK() throws FichierIncorrectException, IOException {
         // preparation des donnees
@@ -173,6 +207,10 @@ class LabyrintheTest {
         assertFalse(l.etreFini(), "La partie ne devrait pas etre finie");
     }
 
+    /**
+     * test numero 8 qui test si la methode charge leve une exception lorsqu il y a 2 personnages dans le labyrinthe
+     * @throws IOException
+     */
     @Test
     public void test_08_charge_2_personnages() throws IOException {
         // verification
@@ -184,6 +222,10 @@ class LabyrintheTest {
         }
     }
 
+    /**
+     * test numero 9 qui test si la methode charge leve une exception lorsqu il n y a pas de personnage dans le labyrinthe
+     * @throws IOException
+     */
     @Test
     public void test_09_charge_0_personnages() throws IOException {
         // verification
@@ -195,6 +237,10 @@ class LabyrintheTest {
         }
     }
 
+    /**
+     * test numero 10 qui test si la methode charge leve une exception lorsqu il y a plusieurs sorties dans le labyrinthe
+     * @throws IOException
+     */
     @Test
     public void test_10_charge_2_sorties() throws IOException {
         // verification
@@ -206,6 +252,10 @@ class LabyrintheTest {
         }
     }
 
+    /**
+     * test numero 11 qui test si la methode charge leve une exception lorsqu il n y a pas de sortie dans le labyrinthe
+     * @throws IOException
+     */
     @Test
     public void test_11_charge_0_sorties() throws IOException {
         // verification
@@ -217,6 +267,10 @@ class LabyrintheTest {
         }
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void test_12_charge_valeur_nb_lignes_invalide() throws IOException {
         // verification
