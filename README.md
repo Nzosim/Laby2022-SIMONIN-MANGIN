@@ -189,7 +189,7 @@ fichier [laby_caractereInconnu.txt](https://github.com/Nzosim/Laby2022-SIMONIN-M
 
 Utilisation du fichier [laby_2.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_2.txt)
 
-17) [test_17_deplacerPerso_rencontre_sortie](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L353)
+17) [test_17_deplacerPerso_rencontre_sortie](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L358)
     permet de tester la méthode deplacerPerso() de la classe Labyrinthe cette méthode permet de tester si le personnage
     s'arrete bien sur la sortie du labyrinthe.
 
