@@ -261,4 +261,15 @@ class LabyrintheTest {
             assertEquals(e.getMessage(), "FichierIncorrectException : Le nombre de colonne correspond pas", "L'exception FichierIncorectException : Le nombre de colonne ne correspond pas devrait être levée");
         }
     }
+
+    @Test
+    public void test_16_charge_caractere_inconnu() throws IOException{
+        // verification
+        assertThrows(FichierIncorrectException.class, () -> Labyrinthe.chargerLabyrinthe("laby/laby_caractereInconnu.txt"));
+        try {
+            Labyrinthe.chargerLabyrinthe("laby/laby_caractereInconnu.txt");
+        } catch (FichierIncorrectException e) {
+            assertEquals(e.getMessage(), "FichierIncorrectException : caractere inconnu E", "L'exception FichierIncorectException : Caractere inconnu  devrait être levée");
+        }
+    }
 }
