@@ -212,7 +212,7 @@ public class Labyrinthe {
             // On verifie que la ligne est de la bonne taille
             // Sinon on lance une exception FinFichierIncorrectException
             // Avec le message correspondant nbLignes ne correspond pas
-            if (ligne.length() > ny) throw new FichierIncorrectException("Le nombre de colonne correspond pas");
+            if (ligne.length() < ny) throw new FichierIncorrectException("Le nombre de colonne correspond pas");
 
             // On parcours la ligne
             for (int y = 0; y < ny; y++) {
