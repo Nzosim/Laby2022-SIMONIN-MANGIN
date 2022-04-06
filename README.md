@@ -49,6 +49,11 @@
 
 #### Pour les tests 1, 4, 5, 6, 7 nous avons utilisé le fichier [laby0.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby0.txt) pour faire les tests où les exceptions ne sont pas à verifier.
 
+Pour tester les exceptions que renvoie les méthodes de la classe Labyrinthe, nous utilisons des Exceptions que l'on a
+créé voici les deux fichiers exceptions que nous avons créé :
+<br>[ActionInconnueException.java](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/src/ActionInconnueException.java)
+, [FichierIncorrectException.java](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/src/FichierIncorrectException.java)
+
 1) [test_01_getChar_OK](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L15)
    permet de tester la méthode `getChar()` de la classe Labyrinthe cette méthode retourne la caractère présent à la
    position (x,y) dans le labyrinthe
@@ -69,10 +74,13 @@
       3,6)
 
 3) [test_03_getSuivant_Exception](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L58)
-   permet de tester la méthode `getSuivant()` de la classe Labyrinthe a/ tester la position du personnage après un
-   action inconnue depuis la position (3,5) qui ne doit pas changer
+   permet de tester la méthode `getSuivant()` de la classe Labyrinthe cette méthode permet de tester si la méthode
+   getSuivant lève bien une exception de type `ActionInconnueException` si l'action n'est pas reconnue, ici nous testons
+   l'action 'boo' qui n'est pas reconnue donc et a pour message :
+   `"Action inconnue : boo"`
 
-4) [test_04_deplacerPerso_OK](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L77)
+
+5) [test_04_deplacerPerso_OK](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L77)
    permet de tester la méthode `deplacerPerso()` de la classe Labyrinthe cette méthode permet de déplacer le personnage
    dans la direction indiquée jusqu'à rencontrer un mur
     - **a)** tester si le personnage est bien placé à la position (1,3) après avoir effectué une action haut et que son
@@ -84,17 +92,17 @@
     - **d)** tester si le personnage est bien placé à la position (3,1) après avoir effectué une action gauche et que
       son ancienne case (3,5) est bien vide
 
-5) [test_05_etreFini_OK](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L118)
+6) [test_05_etreFini_OK](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L118)
    permet de tester la méthode `etreFini()` de la classe Labyrinthe cette méthode permet de savoir si le personnage est
    arrivé à la sortie
     - **a)** tester si le personnage est arrivé à la sortie après avoir effectué l'action haut et gauche
 
-6) [test_06_etreFini_avance](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L138)
+7) [test_06_etreFini_avance](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L138)
    permet de tester la méthode `etreFini()` de la classe Labyrinthe cette méthode permet de savoir si le personnage est
    arrivé à la sortie ce test reprend le test précédent mais en vérifiant la place de chaque cas après avoir effectué
    une action
 
-7) [test_07_charge_OK](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L176)
+8) [test_07_charge_OK](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/6209d5d168c8e05963417bd7abeeba09f7ea7ddc/test/LabyrintheTest.java#L176)
    permet de tester la méthode `chargerLabyrinthe()` de la classe Labyrinthe cette méthode permet de tester si la
    méthode chargerLabyrinthe fonctionne correctement avec la labyrinthe laby0.txt
 
@@ -202,5 +210,5 @@ Utilisation du fichier [laby_2.txt](https://github.com/Nzosim/Laby2022-SIMONIN-M
 Toutes les classes sont testées avec 100% de couverture puisqu'il n'y a aucune méthode qui est inutile dans les classes
 testées et que tous tests sont **validés**.
 
-Pour la classe `MainLaby`, nous ne pouvons pas la tester car un Main ne peut être testé. Nous ne pouvons pas tester la
-méthode main car elle n'est pas testable.
+Pour la classe `MainLaby`, nous ne pouvons pas la tester car un main ne peut être testé. Donc c'est pour cela qu'elle a
+0% dans chaque colonne.
