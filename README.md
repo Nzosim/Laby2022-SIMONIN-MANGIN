@@ -40,11 +40,8 @@
 
 #### Il faut avoir effectué les étapes 1 et 2 pour pouvoir lancer les tests.
 
-- Dans le terminal, tapez la commande :
-  `javac test/LabyrintheTest.java`
-
-- Lancer le programme grâce à la commande :
-  `java test/LabyrintheTest`
+ - Pour pouvoir lancer les tests il faudra télécharger JUnit 5.8.1 à partir de IntelliJ
+ - Ensuite vous n'avez qu'à executer le fichier `LabyrintheTest.java` avec IntelliJ 
 
 ### Résulat de nos tests :
 
