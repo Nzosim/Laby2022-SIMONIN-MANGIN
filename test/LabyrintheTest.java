@@ -355,6 +355,7 @@ class LabyrintheTest {
      * @throws FichierIncorrectException
      * @throws ActionInconnueException
      */
+    @Test
     public void test_17_deplacerPerso_rencontre_sortie() throws IOException, FichierIncorrectException, ActionInconnueException {
         // preparation des donnees
         Labyrinthe laby = Labyrinthe.chargerLabyrinthe("laby/laby_2.txt");
@@ -363,7 +364,7 @@ class LabyrintheTest {
         laby.deplacerPerso("haut");
 
         // verification
-        assertEquals(laby.getChar(4, 17), 'P', "La position du perso devrait etre (4,17)");
+        assertEquals(laby.getChar(1, 17), 'P', "La position du perso devrait etre (4,17)");
         assertTrue(laby.etreFini(), "Le labyrinthe devrait etre fini");
     }
 }

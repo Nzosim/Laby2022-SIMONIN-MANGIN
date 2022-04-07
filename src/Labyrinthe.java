@@ -192,11 +192,6 @@ public class Labyrinthe {
                 y = this.personnage.getPosition_Y();
                 x = this.personnage.getPosition_X();
             }
-
-            // Si le personnage rencontre une sortie, on sort de la boucle
-            if (etreFini()) {
-                break;
-            }
         }
     }
 
