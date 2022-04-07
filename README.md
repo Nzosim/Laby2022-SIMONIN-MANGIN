@@ -18,7 +18,7 @@
 > mais aussi pour pouvoir les tester plus facilement.
 >
 > Lorsque l'on parametre le message d'une exception, nous avons décider de mettre le nom de la classe de l'exception aussi dans le message
-> c'est pourquoi le message ressemble à ceci : <br> Pour FichierIncorrectException : "FichierIncorrectException : <Le message>"
+> c'est pourquoi le message ressemble à ceci : <br> Pour FichierIncorrectException : "FichierIncorrectException : [Le message]"
 
 ### — Comment télécharger et lancer le labyrinthe :
 
@@ -115,7 +115,7 @@ fichier [laby_deuxPersonnage.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MAN
 8) [test_08_charge_2_personnages](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/3f00e3bf66a7323d98c4d7fc196a94f81960c960/test/LabyrintheTest.java#L220)
    permet de tester la méthode `chargerLabyrinthe()` de la classe Labyrinthe cette méthode permet de tester si la
    méthode chargerLabyrinthe lève bien une **exception** de type `FichierIncorrectException` si le labyrinthe contient
-   plusieurs personnages
+   plusieurs personnages ici le message est : `"FichierIncorrectException : plusieurs personnages"`
 
 Utilisation du
 fichier [laby_SansPersonnage.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_SansPersonnage.txt)
@@ -150,7 +150,7 @@ fichier [laby_2PremieresValeursNaN](https://github.com/Nzosim/Laby2022-SIMONIN-M
     permet de tester la méthode `chargerLabyrinthe()` de la classe Labyrinthe cette méthode permet de tester si la
     méthode chargerLabyrinthe lève bien une exception de type `FichierIncorrectException` si le fichier du labyrinthe
     des caractères qui ne sont pas des nombres, ici le message d'erreur est :
-    `"FichierIncorrectException : "pb num ligne ou colonne"`
+    `"FichierIncorrectException : pb num ligne ou colonne"`
 
 Utilisation du
 fichier [laby_ligneEnPlus.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_ligneEnPlus.txt)
