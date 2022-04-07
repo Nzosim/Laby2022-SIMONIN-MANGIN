@@ -238,7 +238,7 @@ class LabyrintheTest {
         try{
             Labyrinthe.chargerLabyrinthe("laby/laby_SansPersonnage.txt");
         }catch(FichierIncorrectException e){
-            assertEquals(e.getMessage(), "FichierIncorrectException : Aucun personnage", "L'exception aucun personnages devrait etre levée");
+            assertEquals(e.getMessage(), "FichierIncorrectException : personnage inconnu", "L'exception aucun personnages devrait etre levée");
         }
     }
 
@@ -268,7 +268,7 @@ class LabyrintheTest {
         try{
             Labyrinthe.chargerLabyrinthe("laby/laby_pasSortie.txt");
         }catch(FichierIncorrectException e){
-            assertEquals(e.getMessage(), "FichierIncorrectException : Aucune sortie", "L'exception aucune sortie devrait etre levée");
+            assertEquals(e.getMessage(), "FichierIncorrectException : sortie inconnue", "L'exception aucune sortie devrait etre levée");
         }
     }
 
@@ -284,7 +284,7 @@ class LabyrintheTest {
         try {
             Labyrinthe.chargerLabyrinthe("laby/laby_2PremieresValeurNaN.txt");
         } catch (FichierIncorrectException e) {
-            assertEquals(e.getMessage(), "FichierIncorrectException : Le caractère n'est pas un nombre, donc le fichier n'est pas correct", "L'exception caractère non nombre devrait etre levee");
+            assertEquals(e.getMessage(), "FichierIncorrectException : pb num ligne ou colonne", "L'exception caractère non nombre devrait etre levee");
         }
     }
 
@@ -299,7 +299,7 @@ class LabyrintheTest {
         try {
             Labyrinthe.chargerLabyrinthe("laby/laby_ligneEnPlus.txt");
         } catch (FichierIncorrectException e) {
-            assertEquals(e.getMessage(), "FichierIncorrectException : Le nombre de ligne ne correspond pas", "L'exception FichierIncorectException : Le nombre de ligne ne correspond pas devrait etre levee");
+            assertEquals(e.getMessage(), "FichierIncorrectException : nbLignes ne correspond pas", "L'exception FichierIncorectException : Le nombre de ligne ne correspond pas devrait etre levee");
         }
     }
 
@@ -314,7 +314,7 @@ class LabyrintheTest {
         try {
             Labyrinthe.chargerLabyrinthe("laby/laby_ligneEnMoins.txt");
         } catch (FichierIncorrectException e) {
-            assertEquals(e.getMessage(), "FichierIncorrectException : Le nombre de ligne ne correspond pas", "L'exception FichierIncorectException : Le nombre de ligne ne correspond pas devrait etre levée");
+            assertEquals(e.getMessage(), "FichierIncorrectException : nbLignes ne correspond pas", "L'exception FichierIncorectException : Le nombre de ligne ne correspond pas devrait etre levée");
         }
     }
 
@@ -329,7 +329,7 @@ class LabyrintheTest {
         try {
             Labyrinthe.chargerLabyrinthe("laby/laby_colonneIncorrect.txt");
         } catch (FichierIncorrectException e) {
-            assertEquals(e.getMessage(), "FichierIncorrectException : Le nombre de colonne correspond pas", "L'exception FichierIncorectException : Le nombre de colonne ne correspond pas devrait être levée");
+            assertEquals(e.getMessage(), "FichierIncorrectException : nbColonnes ne correspond pas", "L'exception FichierIncorectException : Le nombre de colonne ne correspond pas devrait être levée");
         }
     }
 

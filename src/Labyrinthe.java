@@ -61,7 +61,7 @@ public class Labyrinthe {
             ny = Integer.parseInt(buff.readLine());
         } catch (NumberFormatException e) {
             // On lance une exception si le fichier n'est pas au bon format
-            throw new FichierIncorrectException("Le caractère n'est pas un nombre, donc le fichier n'est pas correct");
+            throw new FichierIncorrectException("pb num ligne ou colonne");
         }
 
         // Initialisation des murs du labyrinthe
@@ -81,12 +81,12 @@ public class Labyrinthe {
 
             // On lance une exception si le fichier a une ou plusieurs lignes en moins que le nombre de lignes du labyrinthe
             if (ligne == null) {
-                throw new FichierIncorrectException("Le nombre de ligne ne correspond pas");
+                throw new FichierIncorrectException("nbLignes ne correspond pas");
             }
 
             // On verifie que la ligne est de la bonne taille
             // Sinon on lance une exception FichierIncorrectException
-            if (ligne.length() < ny) throw new FichierIncorrectException("Le nombre de colonne correspond pas");
+            if (ligne.length() < ny) throw new FichierIncorrectException("nbColonnes ne correspond pas");
 
             // On parcours la ligne
             for (int y = 0; y < ny; y++) {
@@ -121,11 +121,11 @@ public class Labyrinthe {
 
         // On regarde qu'il n'y a plus aucune ligne
         ligne = buff.readLine();
-        if (ligne != null) throw new FichierIncorrectException("Le nombre de ligne ne correspond pas");
+        if (ligne != null) throw new FichierIncorrectException("nbLignes ne correspond pas");
 
         // On verifier que le fichier contient bien une sortie et un personnage
-        if (!sortiePlace) throw new FichierIncorrectException("Aucune sortie");
-        if (!persoPlace) throw new FichierIncorrectException("Aucun personnage");
+        if (!sortiePlace) throw new FichierIncorrectException("sortie inconnue");
+        if (!persoPlace) throw new FichierIncorrectException("personnage inconnu");
 
         // On ferme le fichier
         buff.close();

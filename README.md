@@ -126,7 +126,7 @@ fichier [laby_SansPersonnage.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MAN
 9) [test_09_charge_0_personnages](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/3f00e3bf66a7323d98c4d7fc196a94f81960c960/test/LabyrintheTest.java#L235)
    permet de tester la méthode `chargerLabyrinthe()` de la classe Labyrinthe cette méthode permet de tester si la
    méthode chargerLabyrinthe lève bien une exception de type `FichierIncorrectException` si le labyrinthe contient aucun
-   personnage
+   personnage ici le message est : `"FichierIncorrectException : personnage inconnu"`
 
 Utilisation du
 fichier [laby_deuxSortie.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_deuxSortie.txt)
@@ -144,7 +144,7 @@ fichier [laby_SansSortie.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/
     permet de tester la méthode `chargerLabyrinthe()` de la classe Labyrinthe cette méthode permet de tester si la
     méthode chargerLabyrinthe lève bien une exception de type `FichierIncorrectException` si le labyrinthe ne contient
     aucune sortie, mais aussi de verifier que le message d'erreur est correct ici le message d'erreur est :
-    `"FichierIncorrectException : Aucune sortie"`
+    `"FichierIncorrectException : sortie inconnue"`
 
 Utilisation du
 fichier [laby_2PremieresValeursNaN](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_2PremieresValeurNaN.txt)
@@ -153,7 +153,7 @@ fichier [laby_2PremieresValeursNaN](https://github.com/Nzosim/Laby2022-SIMONIN-M
     permet de tester la méthode `chargerLabyrinthe()` de la classe Labyrinthe cette méthode permet de tester si la
     méthode chargerLabyrinthe lève bien une exception de type `FichierIncorrectException` si le fichier du labyrinthe
     des caractères qui ne sont pas des nombres, ici le message d'erreur est :
-    `"FichierIncorrectException : Le caractère n'est pas un nombre, donc le fichier n'est pas correct"`
+    `"FichierIncorrectException : "pb num ligne ou colonne"`
 
 Utilisation du
 fichier [laby_ligneEnPlus.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_ligneEnPlus.txt)
@@ -163,7 +163,7 @@ fichier [laby_ligneEnPlus.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN
     méthode chargerLabyrinthe lève bien une exception de type `FichierIncorrectException` si le fichier du labyrinthe ne
     contient pas le nombre de lignes indiqué dans la première ligne du fichier, qu'il contienne **plus** de ligne
     qu'indiqué ici le message d'erreur est :
-    `"FichierIncorrectException : Le nombre de ligne ne correspond pas"`
+    `"FichierIncorrectException : nbLignes ne correspond pas"`
 
 Utilisation du
 fichier [laby_ligneEnMoins.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_ligneEnMoins.txt)
@@ -173,7 +173,7 @@ fichier [laby_ligneEnMoins.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGI
     méthode chargerLabyrinthe lève bien une exception de type `FichierIncorrectException` si le fichier du labyrinthe ne
     contient pas le nombre de lignes indiqué dans la première ligne du fichier, qu'il contienne **moins** de ligne
     qu'indiqué ici le message d'erreur est :
-    `"FichierIncorrectException : Le nombre de ligne ne correspond pas"`
+    `"FichierIncorrectException : nbLignes ne correspond pas"`
 
 Utilisation du
 fichier [laby_colonneIncorrect.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_colonneIncorrect.txt)
@@ -182,7 +182,7 @@ fichier [laby_colonneIncorrect.txt](https://github.com/Nzosim/Laby2022-SIMONIN-M
     permet de tester la méthode `chargerLabyrinthe()` de la classe Labyrinthe cette méthode permet de tester si la
     méthode chargerLabyrinthe lève bien une exception de type `FichierIncorrectException` si le fichier du labyrinthe ne
     contient pas le bon nombre de caractères par colonnes ici le message d'erreur est :
-    `"FichierIncorrectException : Le nombre de colonne ne correspond pas"`
+    `"FichierIncorrectException : nbColonnes ne correspond pas"`
 
 Utilisation du
 fichier [laby_caractereInconnu.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_caractereInconnu.txt)
