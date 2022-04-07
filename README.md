@@ -13,6 +13,12 @@
 >
 > Durant la conception nous avons choisi de créer de nouveaux fichiers de labyrinthe, et ainsi tester toutes les possiblités d'erreurs
 > lorsque l'on charge un labyrinthe
+>
+> Nous avons choisi d'utiliser des messages personnalisé dans les exceptions, pour pourvoir plus facilement les comprendre les types d'erreurs
+> mais aussi pour pouvoir les tester plus facilement.
+>
+> Lorsque l'on parametre le message d'une exception, nous avons décider de mettre le nom de la classe de l'exception aussi dans le message
+> c'est pourquoi le message ressemble à ceci : <br> Pour FichierIncorrectException : "FichierIncorrectException : <Le message>"
 
 ### — Comment télécharger et lancer le labyrinthe :
 
@@ -40,12 +46,12 @@
 - Lancer le programme grâce à la commande :
   `java test/LabyrintheTest`
 
-### — Résulat de nos tests :
+### Résulat de nos tests :
 
 > Nous avons abordé l'ensemble des tests possible en passant du test basique de méthode jusqu'aux tests
-> d'exception nous avons au total : **17** tests qui sont tous validés.
+> d'exceptions, nous avons un total de **17** tests qui sont tous validés.
 
-### — Nos tests : [LabyrintheTest.java](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/test/LabyrintheTest.java)
+### Nos tests : [LabyrintheTest.java](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/test/LabyrintheTest.java)
 
 #### Pour les tests 1, 4, 5, 6, 7 nous avons utilisé le fichier [laby0.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby0.txt) pour faire les tests où les exceptions ne sont pas à verifier.
 
@@ -187,9 +193,9 @@ fichier [laby_caractereInconnu.txt](https://github.com/Nzosim/Laby2022-SIMONIN-M
     est inconnue nous avons pris comme caractère inconnu le caractère `E` donc ici le message d'erreur est :
     `"FichierIncorrectException : caractere inconnu E"`
 
-Utilisation du fichier [laby_2.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_2.txt)
+Utilisation du fichier [laby2.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_2.txt)
 
-17) [test_17_deplacerPerso_rencontre_sortie](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/3f00e3bf66a7323d98c4d7fc196a94f81960c960/test/LabyrintheTest.java#L359)
+17) [test_17_deplacerPerso_rencontre_sortie](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/a5c3db9baac1f1f415a3e5fbaf949d9215ac58ef/test/LabyrintheTest.java#L359)
     permet de tester la méthode deplacerPerso() de la classe Labyrinthe cette méthode permet de tester si le personnage
     ne s'arrete pas sur la sortie du labyrinthe ce qui est attendu.
 
