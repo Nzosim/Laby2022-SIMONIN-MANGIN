@@ -28,7 +28,7 @@
 
 
 - Lancer le programme grâce à la commande :
-  <br>`java src/MainLaby.java`
+  <br>`java src/MainLaby.java laby/<nom du fichier>`
 
 ### — [Comment lancer nos tests :](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/test/LabyrintheTest.java)
 
@@ -189,9 +189,9 @@ fichier [laby_caractereInconnu.txt](https://github.com/Nzosim/Laby2022-SIMONIN-M
 
 Utilisation du fichier [laby_2.txt](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/laby/laby_2.txt)
 
-17) [test_17_deplacerPerso_rencontre_sortie](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/3f00e3bf66a7323d98c4d7fc196a94f81960c960/test/LabyrintheTest.java#L358)
+17) [test_17_deplacerPerso_rencontre_sortie](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/3f00e3bf66a7323d98c4d7fc196a94f81960c960/test/LabyrintheTest.java#L359)
     permet de tester la méthode deplacerPerso() de la classe Labyrinthe cette méthode permet de tester si le personnage
-    s'arrete bien sur la sortie du labyrinthe.
+    ne s'arrete pas sur la sortie du labyrinthe ce qui est attendu.
 
 ### - Converture de test
 
@@ -208,7 +208,7 @@ Utilisation du fichier [laby_2.txt](https://github.com/Nzosim/Laby2022-SIMONIN-M
 | `MainLaby`                  | 0%       | 0%        | 0%      |
 
 Toutes les classes sont testées avec 100% de couverture puisqu'il n'y a aucune méthode qui est inutile dans les classes
-testées et que tous tests sont **validés**.
+testées et que tous les tests sont **validés**.
 
-Pour la classe `MainLaby`, nous ne pouvons pas la tester car un main ne peut être testé. Donc c'est pour cela qu'elle a
+Pour la classe `MainLaby`, nous ne pouvons pas la tester, car un main ne peut être testé. Donc c'est pour cela qu'elle a
 0% dans chaque colonne.
