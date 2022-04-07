@@ -38,8 +38,6 @@
 
 ### — [Comment lancer nos tests :](https://github.com/Nzosim/Laby2022-SIMONIN-MANGIN/blob/main/test/LabyrintheTest.java)
 
-#### Il faut avoir effectué les étapes 1 et 2 pour pouvoir lancer les tests.
-
  - Pour pouvoir lancer les tests il faudra télécharger JUnit 5.8.1 à partir de IntelliJ
  - Ensuite vous n'avez qu'à executer le fichier `LabyrintheTest.java` avec IntelliJ 
 
